@@ -1,0 +1,229 @@
+@use 'vars' as *;
+
+.fee-page{
+	padding-bottom: 200px;
+	@include mq{
+		padding-bottom: 50px;
+	}
+	&__intro{
+		text-align: center;
+		margin-bottom: 80px;
+		@include mq{
+			margin-bottom: 50px;
+			text-align: left;
+		}
+	}
+}
+
+.fee-block{
+	margin-bottom: 100px;
+	@include mq{
+		margin-bottom: 50px;
+	}
+	&__ttl{
+		@include font-size(20);
+		font-weight: 500;
+		margin-bottom: 10px;
+		color: $red;
+		@include mq{
+			@include font-size(18);
+		}
+		span{
+			margin-right: 10px;
+		}
+	}
+	&__dl{
+		margin-bottom: 25px;
+		&:last-of-type{
+			margin-bottom: 0;
+		}
+	}
+	&__dt{
+		@include font-size(16);
+		font-weight: 500;
+		position: relative;
+		margin-bottom: 10px;
+		@include mq{
+			@include font-size(14);
+			padding-right: 150px;
+		}
+		.fee-block__note{
+			position: absolute;
+			top: 0;
+			right: 0;
+			@include mq{
+				top: 5px;
+			}
+		}
+	}
+	&__note{
+		@include font-size(10);
+		display: block;
+		text-align: right;
+		margin-bottom: 4px;
+	}
+	&__desc{
+		margin-top: 4px;
+		@include font-size(12);
+		line-height: 2;
+		display: block;
+	}
+	&__content{
+		margin-bottom: 20px;
+		
+	}
+	a{
+		text-decoration: underline;
+		margin-right: 10px;
+		color: #000;
+	}
+
+}
+
+.c-table{
+	@include fts(16,28);
+	@include mq{
+		@include font-size(14);
+	}
+	.table-scroll{
+		overflow-x: scroll;
+	}
+	table{
+		width: 100%;
+		border: 1px solid #D0D0D0;
+		@include mq{
+			width: 1100px;
+		}
+		tr{
+			th, td{
+				width: 33.33%;
+				border-bottom: 1px solid #D0D0D0;
+				border-right: 1px solid #d0d0d0;
+				padding: 5px 10px;
+				text-align: center;
+				&:last-child{
+					border-right: none;
+				}
+			}
+			th{
+				background: #FAF5F2;
+				font-weight: 500;
+			}
+			&:last-of-type{
+				th, td{
+					border-bottom: none;
+				}
+			}
+		}
+	}
+	&--02{
+		tr{
+			th, td{
+				width: 50%;
+			}
+		}
+	}
+	&--03{
+		tr{
+			th, td{
+				&:nth-child(1), &:nth-child(2){
+					width: 26.81%;
+				}
+				&:nth-child(3){
+					width: calc(100% - 26.81%*2);
+				}
+			}
+		}
+	}
+	&--04{
+		tr{
+			td{
+				width: 100%;
+			}
+		}
+	}
+}
+
+.mCSB_horizontal.mCSB_inside>.mCSB_container{
+	margin-bottom: 17px;
+}
+.mCS-dark.mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar{
+	background: $red;
+	border-radius: 0;
+	height: 5px;
+	z-index: 10;
+}
+.mCS-dark.mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar{
+	background: $red;
+}
+.mCS-dark.mCSB_scrollTools .mCSB_dragger.mCSB_dragger_onDrag .mCSB_dragger_bar, .mCS-dark.mCSB_scrollTools .mCSB_dragger:active .mCSB_dragger_bar{
+	background: $red;
+}
+.mCSB_scrollTools.mCSB_scrollTools_horizontal .mCSB_draggerRail{
+	background: #D9D9D9;
+	top: 0;
+	position: absolute;
+	width: 835px;
+	height: 5px;
+	left: 50%;
+    transform: translateX(-50%);
+}
+.fee-faq{
+	padding-bottom: 183px;
+	@include mq{
+		padding-bottom: 50px;
+	}
+	&__dl{
+		border-bottom: 1px solid #D0D0D0;
+	}
+	&__dt, &__dd{
+		padding: 35px 60px;
+		@include mq{
+			padding: 25px 40px;
+		}
+	}
+	&__dt{
+		position: relative;
+		@include fts(16, 28);
+		font-weight: 500;
+		cursor: pointer;
+		@include mq{
+			@include font-size(14);
+		}
+		@include p-after(25px, 25px){
+			background: url(../img/common/open-faq.png) no-repeat center/100%;
+			top: 50%;
+			transform: translateY(-50%);
+			right: 0;
+			@include smooth-transition;
+		}
+		&.is-open{
+			&:after{
+				background: url(../img/common/close-faq.png) no-repeat center/100%;
+			}
+		}
+		&::before{
+			content: "Q";
+			font-family: $font-en;
+			@include font-size(24);
+			line-height: 1;
+			color: $red;
+			position: absolute;
+			top: 50%;
+			transform: translateY(-50%);
+			left: 20px;
+			@include mq{
+				left: 10px;
+			}
+		}
+	}
+	&__dd{
+		padding-top: 0;
+		@include fts(14, 24);
+		display: none;
+	}
+
+	&__control{
+		margin-top: 60px;
+	}
+}

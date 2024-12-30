@@ -1,0 +1,211 @@
+<main id="page-<%= pageData.template %>" class="wrapper">
+	<section class="mv-page">
+		<%- include('common/_breadcrumb'); %>
+		<div class="mv-page__wp">
+			<div class="mv-page__ct">
+				<h1 class="mv-page__ttl">
+					<span class="c-ft--en">CONTACT</span>
+					<span class="c-ft--jp">お問い合わせ</span>
+				</h1>
+			</div>
+			<div class="mv-page__img">
+				<img src="<%= RELATIVE_PATH %>img/contact/img-mv.jpg" alt="CONTACT お問い合わせ">
+			</div>
+		</div>
+	</section>
+	<div class="intro-page">
+		<p>弊所のWebサイトをご覧いただきありがとうございます。法律相談のお申し込み、ご質問、採用に関するお問い合わせは、お電話またはメールフォームにて承っております。どうぞお気軽にご連絡ください。</p>
+	</div>
+	<section class="contact-enquiries">
+		<div class="inner">
+			<h2 class="c-ttl__05">お電話でのお問いわせ</h2>
+			<p class="c-txt__basic contact-enquiries__txt-intro">
+				下記の電話番号までお問い合わせください。
+				<span>※法律相談はご予約をお願いしております。</span>
+			</p>
+			<div class="contact-enquiries__info">
+				<div class="contact-enquiries__info-item">
+					<h3 class="contact-enquiries__info-ttl">本店</h3>
+					<p class="contact-enquiries__info-tel">TEL<a href="tel:0427046577">042-704-6577</a></p>
+					<span class="contact-enquiries__info-note">（営業時間：平日9:30〜17:45）</span>
+				</div>
+				<div class="contact-enquiries__info-item">
+					<h3 class="contact-enquiries__info-ttl">横浜オフィス</h3>
+					<p class="contact-enquiries__info-tel">TEL<a href="tel:0452636100">045-263-6100</a></p>
+					<span class="contact-enquiries__info-note">（営業時間：平日9:30〜17:00）</span>
+				</div>
+			</div>
+		</div>
+	</section>
+	<section class="contact-form">
+		<div class="inner">
+			<h2 class="c-ttl__05">メールでのお問いわせ</h2>
+			<div class="c-txt__basic contact-form__intro">
+				必要事項をご記入いただき、送信ボタンを押してください。
+				<p class="contact-form__intro-note">※初めて法律相談をご予約される方は、<a href="">こちらのページ</a>を先にお読みください。</p>
+			</div>
+			<form action="#form" method="post" class="contact-form__main">
+				<dl class="contact-form__dl">
+					<dt class="contact-form__dt">お問い合わせ項目 <span class="required">必須</span></dt>
+					<dd class="contact-form__dd">
+						<span class="wpcf7-form-control-wrap" data-name="radio-649">
+							<span class="wpcf7-form-control wpcf7-radio checkmark">
+								<span class="wpcf7-list-item first">
+									<label><input type="radio" name="radio-649" value="法律相談のご予約" /><span class="wpcf7-list-item-label">法律相談のご予約</span></label>
+								</span>
+								<span class="wpcf7-list-item">
+									<label><input type="radio" name="radio-649" value="オンラインテレビ電話法律相談のご予約" /><span class="wpcf7-list-item-label">オンラインテレビ電話法律相談のご予約</span></label>
+								</span>
+								<span class="wpcf7-list-item">
+									<label><input type="radio" name="radio-649" value="採用について" /><span class="wpcf7-list-item-label">採用について</span></label>
+								</span>
+								<span class="wpcf7-list-item last">
+									<label><input type="radio" name="radio-649" value="その他" /><span class="wpcf7-list-item-label">その他</span></label>
+								</span>
+							</span>
+						</span>
+					</dd>
+				</dl>
+				<dl class="contact-form__dl">
+					<dt class="contact-form__dt">お名前 <span class="required">必須</span></dt>
+					<dd class="contact-form__dd">
+						<input type="text" class="form-control" placeholder="山田　太郎">
+					</dd>
+				</dl>
+				<dl class="contact-form__dl">
+					<dt class="contact-form__dt">フリガナ <span class="required">必須</span></dt>
+					<dd class="contact-form__dd">
+						<input type="text" class="form-control" placeholder="ヤマダ　タロウ">
+					</dd>
+				</dl>
+				<dl class="contact-form__dl">
+					<dt class="contact-form__dt">会社名 <span class="any">任意</span></dt>
+					<dd class="contact-form__dd">
+						<input type="text" class="form-control" placeholder="例）株式会社ABC">
+					</dd>
+				</dl>
+				<dl class="contact-form__dl">
+					<dt class="contact-form__dt">電話番号 <span class="required">必須</span></dt>
+					<dd class="contact-form__dd">
+						<input type="text" class="form-control" placeholder="09012345678">
+						<span class="contact-form__dd-note">※半角数字・ハイフン無し</span>
+					</dd>
+				</dl>
+				<dl class="contact-form__dl">
+					<dt class="contact-form__dt">メールアドレス <span class="required">必須</span></dt>
+					<dd class="contact-form__dd">
+						<input type="text" class="form-control" placeholder="info@example.com">
+					</dd>
+				</dl>
+				<dl class="contact-form__dl">
+					<dt class="contact-form__dt">郵便番号 <span class="any">任意</span></dt>
+					<dd class="contact-form__dd">
+						<div class="contact-form__add">〒 <input type="text" class="form-control" name="zip1" placeholder="1235678"  onKeyUp="AjaxZip3.zip2addr('zip1','','address1','address2');"></div>
+						<span class="contact-form__dd-note">※半角数字・ハイフン無し</span>
+					</dd>
+				</dl>
+				<dl class="contact-form__dl">
+					<dt class="contact-form__dt">住所 <span class="any">任意</span></dt>
+					<dd class="contact-form__dd">
+						<div class="contact-form__select">
+							<select name="address1" class="form-control">
+								<option value="">都道府県を選択</option>
+								<option value="北海道">北海道</option>
+								<option value="青森県">青森県</option>
+								<option value="岩手県">岩手県</option>
+								<option value="宮城県">宮城県</option>
+								<option value="秋田県">秋田県</option>
+								<option value="山形県">山形県</option>
+								<option value="福島県">福島県</option>
+								<option value="茨城県">茨城県</option>
+								<option value="栃木県">栃木県</option>
+								<option value="群馬県">群馬県</option>
+								<option value="埼玉県">埼玉県</option>
+								<option value="千葉県">千葉県</option>
+								<option value="東京都">東京都</option>
+								<option value="神奈川県">神奈川県</option>
+								<option value="新潟県">新潟県</option>
+								<option value="富山県">富山県</option>
+								<option value="石川県">石川県</option>
+								<option value="福井県">福井県</option>
+								<option value="山梨県">山梨県</option>
+								<option value="長野県">長野県</option>
+								<option value="岐阜県">岐阜県</option>
+								<option value="静岡県">静岡県</option>
+								<option value="愛知県">愛知県</option>
+								<option value="三重県">三重県</option>
+								<option value="滋賀県">滋賀県</option>
+								<option value="京都府">京都府</option>
+								<option value="大阪府">大阪府</option>
+								<option value="兵庫県">兵庫県</option>
+								<option value="奈良県">奈良県</option>
+								<option value="和歌山県">和歌山県</option>
+								<option value="鳥取県">鳥取県</option>
+								<option value="島根県">島根県</option>
+								<option value="岡山県">岡山県</option>
+								<option value="広島県">広島県</option>
+								<option value="山口県">山口県</option>
+								<option value="徳島県">徳島県</option>
+								<option value="香川県">香川県</option>
+								<option value="愛媛県">愛媛県</option>
+								<option value="高知県">高知県</option>
+								<option value="福岡県">福岡県</option>
+								<option value="佐賀県">佐賀県</option>
+								<option value="長崎県">長崎県</option>
+								<option value="熊本県">熊本県</option>
+								<option value="大分県">大分県</option>
+								<option value="宮崎県">宮崎県</option>
+								<option value="鹿児島県">鹿児島県</option>
+								<option value="沖縄県">沖縄県</option>
+							</select>
+						</div>
+						<dl class="contact-form__dlsub">
+							<dt class="contact-form__dtsub">市区町村名</dt>
+							<dd class="contact-form__ddsub">
+								<input type="text" name="address2" class="form-control" placeholder="例）千代田区神田神保町">
+							</dd>
+						</dl>
+						<dl class="contact-form__dlsub">
+							<dt class="contact-form__dtsub">番地・マンションなど</dt>
+							<dd class="contact-form__ddsub">
+								<input type="text" class="form-control" placeholder="例）1-2-4">
+							</dd>
+						</dl>
+					</dd>
+				</dl>
+				<dl class="contact-form__dl">
+					<dt class="contact-form__dt">お問い合わせ内容 <span class="required">必須</span></dt>
+					<dd class="contact-form__dd">
+						<textarea name="textarea1" id="textarea1" placeholder="お問い合わせ内容を入力してください。" class="form-control form-control--textarea"></textarea>
+					</dd>
+				</dl>
+				<dl class="contact-form__dl">
+					<dt class="contact-form__dt">ご相談日時のご希望 <span class="required">必須</span></dt>
+					<dd class="contact-form__dd">
+						<textarea name="textarea2" id="textarea2" placeholder="例）平日の日中であれば調整可能です。具体的には以下の日程は都合が良いです。" class="form-control form-control--textarea"></textarea>
+					</dd>
+				</dl>
+				<div class="contact-form__privacy">
+					<h3 class="contact-form__privacy-ttl">個人情報の取扱いについて</h3>
+					<div class="contact-form__privacy-content">
+						法律事務所S（以下、「弊所」といいます）は、個人情報の保護に関する法律（以下「個人情報保護法」といいます）その他の関係法令を遵守するとともに、最善の注意を払って本サイトの利用者（以下、「ご利用者様」といいます）の個人情報を保護することが社会的責務であると考え、ご利用者様に安心し、また安全に本サイトをご利用いただけるXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+					</div>
+				</div>
+				<div class="contact-form__check">
+					<span class="mwform-checkbox-field">
+						<label>
+							<input type="checkbox" name="checkbox" value="弊所の個人情報の取扱いに同意する">
+							<span class="mwform-checkbox-field-text">弊所の個人情報の取扱いに同意する</span>
+							<span class="required">【必須】</span>
+						</label>
+					</span>
+				</div>
+				<div class="contact-form__capcha">
+					<img src="<%= RELATIVE_PATH %>img/contact/img-capcha.png" alt="CONTACT お問い合わせ" width="240">
+				</div>
+				<button class="c-btn__01">上記の内容で送信する</button>
+			</form>
+		</div>
+	</section>
+</main>
+

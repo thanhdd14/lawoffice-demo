@@ -1,0 +1,361 @@
+@use 'vars' as *;
+
+.consultation-top{
+	background: #FAF5F2;
+	padding-bottom: 130px;
+	position: relative;
+	@include p-before(100%, 200px){
+		top: 0;
+		left: 0;
+		background: #FAF5F2;
+		transform: translateY(-100%);
+	}
+	&__wrapper{ 
+		max-width: 750px;
+		margin: 0 auto;
+	}
+	&__intro{
+		margin-bottom: 60px;
+		p{
+			margin-bottom: 27px;
+			&:last-of-type{
+				margin-bottom: 0;
+			}
+		}
+	}
+	&__box{
+		background: #fff;
+		border-radius: 5px;
+		overflow: hidden;
+		&-label{
+			color: #fff;
+			background: $red;
+			text-align: center;
+			padding: 10px 15px;
+			font-weight: 500;
+			letter-spacing: 1.5px;
+		}
+		&-list{
+			padding: 28px 54px 48px;
+			display: grid;
+			grid-template-columns: 1fr 1fr;
+			gap: 11px 10px;
+			@include mq{
+				grid-template-columns: 1fr;
+			}
+			li{
+				padding-left: 26px;
+				position: relative;
+				@include p-before(22px, 19px){
+					background: url(../img/consultation/ico-check.png) no-repeat center/100%;
+					top: 4px;
+					left: 0;
+				}
+			}
+		}
+	}
+}
+
+
+.consultation-firsttime{
+	padding: 100px 0 160px;
+	&__wrapper{
+		@include flex(0,start,wrap);
+	}
+	&__ct{
+		width: calc(100% - 54.86%);
+		padding-left: calc((100% - 1100px)/2);
+		padding-top: 44px;
+		@include mq(xl){
+			padding-left: 5%;
+		}
+		p{
+			margin-bottom: 27px;
+			&:last-of-type{
+				margin-bottom: 0;
+			}
+		}
+	}
+	&__img{
+		width: 54.86%;
+		position: relative;
+		@include p-after(62px, 77%){
+			background: #fff;
+			bottom: 0;
+			left: 0;
+		}
+	}
+}
+
+.consultation-form{
+	padding-bottom: 100px;
+	&__wrapper{
+		background: #FAF5F2;
+		padding: 65px 60px 60px;
+	}
+	&__intro{
+		padding: 0 50px;
+		margin-bottom: 40px;
+	}
+	&__wp{
+		background: #fff;
+		padding: 30px 50px 50px;
+		border-radius: 5px;
+	}
+	&__ttlsub{
+		@include fts(16, 28);
+		font-weight: 500;
+		color: $red;
+		text-align: center;
+		margin-bottom: 20px;
+	}
+	&__desc{
+		margin-bottom: 42px;
+	}
+	&__list{
+		display: grid;
+		grid-template-columns: 1fr 1fr 1fr;
+		gap: 11px 12px;
+		li{
+			a{
+				height: 50px;
+				border: 1px solid #000;
+				border-radius: 30px;
+				@include flex(center, center);
+				@include font-size(14);
+				font-weight: 500;
+				color: #000;
+				position: relative;
+				@include p-after(20px, 20px){
+					background: url(../img/consultation/ico-down.png) no-repeat center/100%;
+					top: calc(50% - 10px);
+					right: 13px;
+				}
+			}
+		}
+	}
+}
+
+
+.consultation-fee{
+	padding-bottom: 200px;
+	&__intro{
+		text-align: center;
+		margin-bottom: 60px;
+	}
+	
+	&__ttl{
+		margin-bottom: 44px;
+	}
+
+	&__ttlsub{
+		text-align: center;
+		color: #fff;
+		@include font-size(18);
+		font-weight: 500;
+		background: $red;
+		border-radius: 30px;
+		padding: 7px 30px;
+		margin-bottom: 30px;
+	}
+	&__list{
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: 0 15px;
+		&-item{
+			border: 1px solid $red;
+			border-radius: 5px;
+			@include flex(center, center);
+			gap: 0 10px;
+			padding: 24px 0;
+		}
+		&-img{
+			width: 100px;
+		}
+		&-txt{
+			@include font-size(18);
+			font-weight: 500;
+			color: $red;
+			text-align: center;
+		}
+	}
+
+	&__block{
+		margin-bottom: 70px;
+		&:last-of-type{
+			margin-bottom: 0;
+		}
+		&--styles02{
+			.consultation-fee{
+				&__ttlsub{
+					background: #000;
+				}
+				&__list{
+					grid-template-columns: repeat(6, 1fr);
+					gap: 15px 15px;
+					margin-bottom: 32px;
+					&-item{
+						border-color: #000;
+						padding: 25px 15px;
+						display: block;
+					}
+					&-img{
+						width: 120px;
+						margin: 0 auto 15px;
+					}
+					&-caption{
+						text-align: center;
+						@include font-size(14);
+					}
+				}
+			}
+		}
+	}
+
+	&__table{
+		table{
+			width: 100%;
+			border: 1px solid #D0D0D0;
+			@include font-size(16);
+		tr{
+			th, td{
+				width: 50%;
+				border-bottom: 1px solid #D0D0D0;
+				border-right: 1px solid #d0d0d0;
+				padding: 10px 10px;
+				height: 65px;
+				text-align: center;
+				&:last-child{
+					border-right: none;
+				}
+			}
+			th{
+				background: #FAF5F2;
+				font-weight: 500;
+			}
+			td{
+				color: $red;
+				@include font-size(20);
+				font-weight: 500;
+				span{
+					@include font-size(22);
+				}
+				.txt-note{
+					@include font-size(10);
+					display: block;
+					color: #000;
+				}
+			}
+			&:last-of-type{
+				th, td{
+					border-bottom: none;
+				}
+			}
+		}
+		}
+	}
+}
+
+
+.consultation-process{
+	padding-bottom: 14vw;
+	&__ttl{
+		margin-bottom: 50px;
+	}
+	&__box{
+		position: relative;
+		margin-bottom: 14vw;
+		&:last-of-type{
+			margin-bottom: 0;
+		}
+	}
+	&__ttlsub{
+		@include font-size(20);
+		font-weight: 500;
+		writing-mode: tb-rl;
+		background: $red;
+		color: #fff;
+		padding: 15px 12px 12px 10px;
+		letter-spacing: 4px;
+		width: 40px;
+		position: absolute;
+		top: 0;
+		left: 0;
+		line-height: 1;
+	}
+	&__content{
+		padding-left: 160px;
+		dl{
+			margin-bottom: 50px;
+			padding-bottom: 30px;
+			border-bottom: 1px solid #D0D0D0;
+			dt{
+				@include font-size(20);
+				font-weight: 700;
+				font-family: $font-jp;
+				position: relative;
+				padding-bottom: 21px;
+				margin-bottom: 16px;
+				letter-spacing: 0.5px;
+				span{
+					margin-right: 13px;
+				}
+				@include p-after(30px, 1px){
+					background: $red;
+					bottom: 0;
+					left: 0;
+				}
+			}
+			dd{
+				p{
+					margin-bottom: 20px;
+				}
+				.c-btn__01{
+					margin-left: 0;
+					margin-bottom: 10px;
+				}
+			}
+			&:nth-last-child(2){
+				margin-bottom: 85px;
+			}
+		}
+		&-note{
+			@include font-size(12);
+			line-height: 1.4;
+			letter-spacing: 0.5px;
+			margin-bottom: 0;
+			span{
+				font-weight: 700;
+			}
+		}
+	}
+
+	&__intro{
+		margin-bottom: 82px;
+	}
+
+	&__important{
+		p{
+			@include font-size(16);
+			font-weight: 500;
+			margin-bottom: 10px;
+		}
+		&-dots{
+			@include font-size(14);
+			line-height: 1.714;
+			li{
+				position: relative;
+				padding-left: 20px;
+				display: flex;
+				&::before{
+					content: "●";
+					@include font-size(12);
+					display: inline-block;
+					top: 0;
+					left: 0;
+					position: absolute;
+				}
+			}
+		}
+	}
+}

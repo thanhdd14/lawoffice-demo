@@ -1,0 +1,161 @@
+@use "vars" as *;
+
+#footer{
+	background: black;
+	color: white;
+	padding: 100px 0 40px;
+	@include mq(){
+		padding: 60px 0 40px;
+	}
+	a{
+		color: white;
+	}
+	.footer-block{
+		@include flex(between,0,wrap);
+		margin-bottom: 50px;
+		@include mq(){
+			margin-bottom: 60px;
+		}
+		&__note{
+			width: 370px;
+			@include mq(){
+				width: 100%;
+				@include fts(12,20);
+			}
+			&-item{
+				margin-bottom: 60px;
+				@include mq(){
+					margin-bottom: 35px;
+				}
+				&:last-child{
+					margin-bottom: 0;
+				}
+			}
+			&-logo{
+				display: block;
+				margin-bottom: 10px;
+			}
+		}
+		&__nav{
+			width: calc(100% - 370px);
+			@include flex(end,0,wrap);
+			max-width: 615px;
+			@include mq(){
+				width: 100%;
+				max-width: 100%;
+			}
+		}
+		&__menu{
+			width: 40%;
+			padding-right: 10px;
+			@include mq(){
+				display: none;
+			}
+			&:last-child{
+				width: 20%;
+				padding-right: 0;
+			}
+			&-item{
+				margin-bottom: 10px;
+				a{
+					display: block;
+					color: white;
+					@include font-size(12);
+					position: relative;
+				}
+			}
+		}
+		&__submenu{
+			padding: 5px 0 0 5px;
+			li{
+				margin-bottom: 8px;
+				a{
+					padding: 0 0 0 10px;
+					&:before{
+						content: "｜";
+						position: absolute;
+						top: 0;
+						left: -3px;
+					}
+				}
+			}
+		}
+	}
+	.footer-sns{
+		@include flex(0,0,wrap);
+		margin-bottom: 20px;
+		@include mq(){
+			margin-bottom: 60px;
+		}
+		li{
+			margin-right: 10px;
+			@include mq(sm){
+				width: 100%;
+				margin: 0 0 18px;
+				&:last-child{
+					margin-bottom: 0;
+				}
+			}
+		}
+		a{
+			@include flex(center,center,wrap);
+			width: 211px;
+			height: 54px;
+			color: white;
+			@include mq(sm){
+				width: 100%;
+			}
+			img{
+				display: block;
+				margin: 0 10px 0 0;
+			}
+			span{
+				display: block;
+				@include fts(13,19);
+				@include mq(sm){
+					display: inline-block;
+					span{
+						&:nth-child(2){
+							margin-left: 10px;
+						}
+					}
+				}
+			}
+		}
+		.c-bg--blue{
+			@include font-size(15);
+		}
+	}
+	.footer-ttl{
+		display: block;
+		@include font-size(12);
+		margin-bottom: 10px;
+		@include mq(){
+			@include font-size(16);
+			text-align: center;
+			margin-bottom: 30px;
+		}
+	}
+	.footer-banner{
+		display: grid;
+		gap: 10px 10px;
+		grid-template-columns: 2fr 2fr 2fr 2fr 2fr;
+		margin-bottom: 50px;
+		@include mq(){
+			grid-template-columns: 33.333fr 33.333fr 33.333fr;
+		}
+		@include mq(sm){
+			grid-template-columns: 1fr;
+		}
+		&__item{
+			a{
+				display: block;
+			}
+		}
+	}
+	.copyright{
+		text-align: center;
+		font-family: $font-Roboto;
+		@include font-size(11);
+	}
+}

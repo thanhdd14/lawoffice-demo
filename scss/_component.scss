@@ -1,0 +1,413 @@
+@use "vars" as *;
+
+
+.c-fc{ //font-color
+	&--white{
+		color: white !important;
+	}
+	&--black{
+		color: black !important;
+	}
+	&--red{
+		color: $red !important;
+	}
+	&--navy{
+		color: $navy !important;
+	}
+}
+
+
+.c-bg{
+	&--red{
+		background: $red !important;
+	}
+	&--blue{
+		background: $blue !important;
+	}
+	&--white{
+		background: white !important;
+	}
+	&--black{
+		background: black !important;
+	}
+	&--navy{
+		background: $navy !important;
+	}
+}
+
+.c-ft{
+	&--en{
+		font-family: $font-en;
+	}
+	&--roboto{
+		font-family: $font-Roboto;
+		&-condensed{
+			font-family: $font-Roboto-condensed;
+		}
+	}
+	&--jp{
+		font-family: $font-jp;
+	}
+}
+
+
+
+
+
+
+.c-al{
+	&--c{
+		text-align: center !important;
+	}
+	
+	&--r{
+		text-align: right !important
+	}
+	
+	&--l{
+		text-align: left !important;
+	}
+}
+
+
+
+// Image position control
+.c-pull{
+	&--left{
+		margin-left: calc(((100vw - 100%) / 2) * -1)
+	}
+	&--right{
+		margin-right: calc(((100vw - 100%) / 2) * -1)
+	}
+}
+
+
+
+
+
+
+
+
+
+
+/* ====================================================
+Component
+==================================================== */
+// Common Text style
+.c-txt{
+	&__basic{
+		@include fts(16,28);
+	}
+	&__basic-small{
+		@include fts(14,24);
+	}
+	&__deco{
+		font-family: $font-en;
+		@include font-size(66);
+		writing-mode: tb-rl;
+		color: $red;
+		position: absolute;
+		text-transform: uppercase;
+		letter-spacing: 5px;
+		&--wt{
+			color: #fff;
+		}
+	}
+}
+
+
+
+
+//ttl
+.c-ttl{
+	&__01{
+		display: block;
+		text-align: center;
+		font-family: $font-en;
+		@include font-size(26);
+		line-height: 1.2;
+		letter-spacing: 1px;
+		margin-bottom: 40px;
+		@include mq(){
+			margin-bottom: 35px;
+		}
+	}
+	&__02{
+		display: block;
+		color: $red;
+		.c-ft--en{
+			display: block;
+			@include font-size(66);
+			letter-spacing: 5.5px;
+			@include mq(){
+				@include font-size(38);
+				letter-spacing: 0;
+			}
+		}
+		.c-ft--jp{
+			-webkit-writing-mode: vertical-rl;
+			-ms-writing-mode: tb-rl;
+			writing-mode: vertical-rl;
+			@include font-size(14);
+			display: inline-block;
+			padding: 0 0 0 10px;
+			letter-spacing: 4px;
+			@include mq(){
+				padding: 0;
+				letter-spacing: 1px;
+			}
+		}
+	}
+	&__03{
+		display: block;
+		overflow: hidden;
+		@include font-size(16);
+		font-weight: 500;
+		margin-bottom: 30px;
+		span{
+			display: inline-block;
+			padding: 0 10px 0 0;
+			position: relative;
+			&:after{
+				content: "";
+				width: 5000px;
+				height: 1px;
+				background: black;
+				position: absolute;
+				@include v-align;
+				left: 100%;
+			}
+		}
+		&.c-fc--red{
+			color: $red;
+			span{
+				&:after{
+					background: $red;
+				}
+			}
+		}
+		&.c-fc--navy{
+			color: $navy;
+			span{
+				&:after{
+					background: $navy;
+				}
+			}
+		}
+	}
+	&__04{
+		display: block;
+		text-align: center;
+		position: relative;
+		font-family: $font-jp;
+		@include font-size(26);
+		font-weight: 600;
+		line-height: 1.2;
+		padding: 0 0 67px;
+		margin-bottom: 30px;
+		&:after{
+			content: "";
+			width: 1px;
+			height: 40px;
+			background: $red;
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			right: 0;
+			margin: 0 auto;
+		}
+		&:before{
+			content: "";
+			width: 1px;
+			height: 20px;
+			background: black;
+			position: absolute;
+			bottom: 20px;
+			left: 0;
+			right: 0;
+			margin: 0 auto;
+		}
+	}
+	&__05{
+		font-family: $font-jp;
+		@include font-size(26);
+		font-weight: 600;
+		color: $red;
+		text-align: center;
+		padding-bottom: 60px;
+		position: relative;
+		margin-bottom: 34px;
+		// @include mq{
+		// 	@include font-size(22);
+		// 	padding-bottom: 40px;
+		// 	margin-bottom: 30px;
+		// }
+		@include mq{
+			line-height: 1.5;
+		}
+		@include p-before(1px, 40px){
+			background: #000;
+			bottom: 0;
+			left: 50%;
+			// @include mq{
+			// 	height: 30px;
+			// }
+		}
+		@include p-after(1px, 20px){
+			bottom: 0;
+			background: $red;
+			left: 50%;
+			// @include mq{
+			// 	height: 15px;
+			// }
+		}
+		&--bl{
+			color: #000;
+			text-align: left;
+			padding-bottom: 30px;
+			margin-bottom: 40px;
+			&::before{
+				display: none;
+			}
+			@include p-after(30px, 1px){
+				background: $red;
+				bottom: 0;
+				left: 0;
+			}
+		}
+		&--wt{
+			color: #fff;
+			&:after, &::before{
+				background: #fff;
+			}
+		}
+		&--no-line{
+			padding-bottom: 0;
+			margin-bottom: 42px;
+			&:after, &:before{
+				display: none;
+			}
+		}
+		&--recruit{
+			text-align: center;
+			padding-bottom: 0;
+			margin-bottom: 0;
+			&:after, &:before{
+				display: none;
+			}
+			.txt-lg{
+				width: 100%;
+				color: #000;
+				display: block;
+			}
+			.txt-sm{
+				display: inline-block;
+				font-family: $font-Roboto;
+				font-weight: 500;
+				@include font-size(14);
+				margin-bottom: 20px;
+				border-bottom: 1px solid;
+				text-transform: uppercase;
+				letter-spacing: 1px;
+			}
+		}
+	}
+}
+
+//btn
+.c-btn{
+	&__01{
+		width: 100%;
+		max-width: 320px;
+		height: 60px;
+		@include flex(center,center,wrap);
+		text-align: center;
+		background: black;
+		border: none;
+		outline: none;
+		@include font-size(16);
+		line-height: 1.3;
+		font-weight: 500;
+		font-family: $font-basic;
+		color: white;
+		position: relative;
+		margin: 0 auto;
+		z-index: 2;
+		cursor: pointer;
+		@include smooth-transition;
+		@include mq(){
+			max-width: 345px;
+		}
+		&:hover{
+			opacity: 1;
+			background: $red;
+		}
+		&:after{
+			content: "";
+			width: 29px;
+			height: 5px;
+			background: url("../img/common/icon-arrow-right02.svg")no-repeat;
+			background-size: 100%;
+			position: absolute;
+			@include v-align;
+			right: 20px;
+			@include mq(){
+				right: 13%;
+			}
+		}
+		span{
+			display: block;
+			position: relative;
+			z-index: 2;
+		}
+		small{
+			display: block;
+			width: 100%;
+		}
+		&--red{
+			background: $red;
+			&:hover{
+				background: black;
+			}
+		}
+		&--solid{
+			background: white;
+			border: 1px solid #000;
+			color: black;
+			margin-left: 0;
+			&:after{
+				background: url(../img/common/icon-arr-bl.png) no-repeat center/100%;
+				@include mq(){
+					right: 8%;
+				}
+			}
+			&:hover{
+				background: black;
+				color: white;
+			}
+		}
+	}
+}
+
+
+.view-more{
+	display: inline-block;
+	position: relative;
+	color: $gray;
+	@include font-size(14);
+	line-height: 1;
+	padding: 0 25px 0 0;
+
+	&:after{
+		content: "";
+		width: 20px;
+		height: 6px;
+		background: url("../img/common/icon-arrow-right.svg")no-repeat;
+		background-size: 100%;
+		position: absolute;
+		@include v-align;
+		right: 0;
+	}
+}
+
+

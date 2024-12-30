@@ -1,0 +1,292 @@
+@use 'vars' as *;
+
+.interview-mv{
+	position: relative;
+	padding-top: 37px;
+	@include mq{
+		padding-top: 0;
+	}
+	&__img{
+		padding: 0 50px;
+		@include mq{
+			padding: 0;
+		}
+		img{
+			min-height: 750px;
+			width: 100%;
+			object-fit: cover;
+			@include mq{
+				min-height: 0;
+				height: 580px;
+				object-fit: cover;
+				object-position: top;
+			}
+		}
+	}
+	&__label{
+		background: $red;
+		display: inline-flex;
+		align-items: center;
+		color: #fff;
+		position: absolute;
+		top: 55px;
+		left: 0;
+		@include font-size(14);
+		padding: 11px 13px 11px 60px;
+		@include mq{
+			top: 5px;
+			padding: 8px 13px 8px 15px;
+		}
+		@include p-after(0,0){
+			border-width: 78px 40px 0 0;
+			border-color: $red transparent transparent transparent;
+			border-style: solid;
+			display: inline-block;
+			top: 0;
+			right: 0;
+			transform: translateX(100%);
+			@include mq{
+				border-width: 48px 25px 0 0;
+			}
+		}
+		span{
+			line-height: 1;
+			&.txt-jp{
+				@include font-size(14);
+				letter-spacing: 1px;
+				@include mq{
+					@include font-size(12);
+				}
+				span{
+					@include font-size(18);
+					font-weight: 600;
+					font-family: $font-Roboto;
+					text-transform: uppercase;
+					margin-top: 8px;
+					display: inline-block;
+					letter-spacing: 1.5px;
+					@include mq{
+						@include font-size(12);
+						letter-spacing: 1px;
+						margin-top: 5px;
+					}
+				}
+			}
+			&.txt-en{
+				font-family: $font-en;
+				@include font-size(55);
+				margin-left: 7px;
+				@include mq{
+					@include font-size(34);
+				}
+			}
+		}
+	}
+	&__txt-vertical{
+		position: absolute;
+		top: 30px;
+		right: 50px;
+		background: #fff;
+		z-index: 2;
+		padding: 35px 32px 50px 40px;
+		font-family: $font-jp;
+		font-size: clamp(1.6rem, 1.248rem + 0.939vw, 2.6rem);
+		font-weight: 700;
+		writing-mode: tb-rl;
+		letter-spacing: 5px;
+		line-height: 1.8;
+		@include mq{
+			right: 0;
+			top: 0;
+			padding: 15px 18px 30px 22px;
+			letter-spacing: 2px;
+		}
+	}
+	&__info{
+		position: absolute;
+		background: #fff;
+		padding: 38px 50px 14px 35px;
+		bottom: 0;
+		left: 50px;
+		@include mq{
+			left: 0;
+			padding: 25px 31px 15px 20px;
+		}
+		&-year{
+			@include font-size(16);
+			font-weight: 500;
+			color: #595959;
+			display: block;
+			margin-bottom: 12px;
+			@include mq{
+				@include font-size(12);
+				margin-bottom: 10px;
+			}
+		}
+		&-name{
+			span{
+				display: block;
+			}
+			.name-jp{
+				font-size: clamp(1.2rem, 0.777rem + 1.127vw, 2.4rem);
+				font-weight: 500;
+				@include flex(0,end);
+				margin-bottom: 12px;
+				@include mq{
+					margin-bottom: 7px;
+				}
+				span{
+					font-family: $font-jp;
+					font-size: clamp(2.4rem, 1.625rem + 2.066vw, 4.6rem);
+					font-weight: 600;
+					line-height: 1;
+					margin-left: 18px;
+					letter-spacing: 4px;
+					@include mq{
+						margin-left: 11px;
+						letter-spacing: 2px;
+					}
+				}
+			}
+			.name-en{
+				@include font-size(16);
+				font-weight: 500;
+				font-family: $font-Roboto;
+				color: $red;
+				letter-spacing: 1.6px;
+				@include mq{
+					@include font-size(12);
+					letter-spacing: 1.2px;
+				}
+			}
+		}
+	}
+}
+
+.interview-page{
+	padding: min(10.417vw, 150px) 0;
+	@include mq(){
+		padding: 50px 0;
+	}
+}
+.interview-block{
+	@include flex(0,0,wrap);
+	margin-bottom: 150px;
+	@include mq(tb){
+		margin-bottom: 100px;
+	}
+	@include mq{
+		margin-bottom: 50px;
+	}
+	&:last-of-type{
+		margin-bottom: 0;
+	}
+	&__ct{
+		width: calc(100% - 426px);
+		padding-right: 100px;
+		@include mq(xl){
+			padding-right: 6.944vw;
+		}
+		@include mq(tb){
+			width: calc(100% - 350px);
+		}
+		@include mq{
+			width: 100%;
+			padding-right: 0;
+			order: 2;
+		}
+		dl{
+			margin-bottom: min(6.25vw,90px);
+			@include mq{
+				margin-bottom: 30px;
+			}
+			&:last-of-type{
+				margin-bottom: 0;
+			}
+			dt{
+				@include font-size(18);
+				font-weight: 500;
+				color: $red;
+				margin-bottom: 16px;
+				position: relative;
+				padding-left: 70px;
+				letter-spacing: 0.5px;
+				@include mq{
+					padding-left: 40px;
+				}
+				@include p-before(50px, 1px){
+					background: $red;
+					top: 13px;
+					left: 0;
+					@include mq{
+						width: 30px;
+					}
+				}
+			}
+		}
+	}
+	&__img{
+		width: 426px;
+		@include mq(tb){
+			width: 350px;
+		}
+		@include mq{
+			max-width: 350px;
+			margin: 0 auto 30px;
+			order: 1;
+		}
+	}
+	&--reserve{
+		flex-direction: row-reverse;
+		.interview-block{
+			&__ct{
+				padding-left: 100px;
+				padding-right: 0;
+				@include mq(xl){
+					padding-left: 6.944vw;
+				}
+				@include mq{
+					padding-left: 0;
+				}
+			}
+		}
+	}
+}
+
+.interview-msg{
+	max-width: 464px;
+	margin: 0 auto min(7.639vw, 110px);
+	@include mq{
+		margin-bottom: 50px;
+	}
+	&__img{
+		max-width: 280px;
+		margin: 0 auto -40px;
+		border-radius: 50%;
+	}
+	&__ttl{
+		max-width: 280px;
+		width: 100%;
+		margin: 0 auto 18px;
+		@include font-size(18);
+		font-weight: 500;
+		text-align: center;letter-spacing: 1px;
+		position: relative;
+		color: $red;
+		padding: 12px 0;
+		background: #fff;
+		@include mq{
+			@include font-size(16);
+			padding: 9px 0;
+		}
+		@include p-after(50px, 1px){
+			background: $red;
+			left: calc(50% - 25px);
+			bottom: 0;
+			@include mq{
+				width: 40px;
+				left: calc(50% - 20px);
+			}
+		}
+	}
+}

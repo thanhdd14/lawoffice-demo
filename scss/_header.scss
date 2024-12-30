@@ -1,0 +1,472 @@
+@use "vars" as *;
+
+#header{
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	background: white;
+	@include flex(between,center,wrap);
+	z-index: 99;
+	padding: 15px 0 0 40px;
+	@include mq(tb){
+		padding: 15px 12px;
+		&.active{
+			&:after{
+				content: "";
+				height: calc(100vh - 54px);
+				position: absolute;
+				top: 100%;
+				left: 0;
+				right: 0;
+				bottom: 0;
+				background: rgba(black,0.4);
+			}
+		}
+	}
+	.header-logo{
+		display: block;
+		width: 236px;
+		@include mq(tb){
+			width: 106px;
+		}
+	}
+	.header-nav{
+		width: calc(100% - 250px);
+		@include flex(end,center,wrap);
+		@include mq(tb){
+			align-content: flex-start;
+			position: absolute;
+			top: 54px;
+			right: -100%;
+			height: calc(100vh - 54px);
+			padding: 10px 15px 60px;
+			overflow-y: scroll;
+			width: 100%;
+			max-width: 340px;
+			background: white;
+			@include smooth-transition;
+			z-index: 5;
+			&.active{
+				right: 0;
+			}
+		}
+		&--custom{
+
+		}
+		&__note{
+			@include flex(end,center,wrap);
+			width: 100%;
+			padding: 0 15px 0 0;
+			margin-bottom: 15px;
+			@include mq(tb){
+				order: 3;
+				padding: 0;
+				margin: 0;
+			}
+			ul{
+				@include flex(end,center,wrap);
+				margin: 0 15px 0 0;
+				li{
+					padding: 0 12px;
+					a{
+						display: block;
+						color: $gray;
+						@include font-size(14);
+						font-weight: 500;
+
+					}
+				}
+			}
+			&-tel{
+				line-height: 1;
+				border-left: 1px solid $gray;
+				@include font-size(12);
+				color: black;
+				position: relative;
+				padding: 0 0 0 50px;
+				@include mq(tb){
+					border: none;
+					padding: 0 0 0 35px;
+					width: 100%;
+					max-width: 350px;
+					margin: 0 auto;
+				}
+				&:before{
+					content: "";
+					width: 18px;
+					height: 18px;
+					background: url("../img/common/icon-tel.svg")no-repeat;
+					background-size: 100%;
+					position: absolute;
+					@include v-align;
+					left: 20px;
+					@include mq(tb){
+						left: 0;
+					}
+				}
+				&-item{
+					margin-bottom: 4px;
+					&:last-child{
+						margin-bottom: 0;
+					}
+				}
+				a{
+					display: inline-block;
+					@include font-size(17);
+					font-weight: bold;
+				}
+			}
+		}
+		&__menu{
+			display: flex;
+			flex-wrap: wrap;
+			align-items: flex-end;
+			margin: 0 12px 0 0;
+			@include mq(tb){
+				width: 100%;
+				display: block;
+				margin: 0;
+				order: 1;
+			}
+			&-item{
+				@include flex(center,center,wrap);
+				padding: 16px;
+				@include mq(xl){
+					padding: 16px 10px;
+				}
+				@include mq(tb){
+					position: relative;
+					display: block;
+					padding: 0;
+					border-bottom: 1px solid #D0D0D0;
+				}
+				>a{
+					display: block;
+					@include font-size(16);
+					font-weight: 600;
+					color: black;
+					@include mq(tb){
+						padding: 10px 0;
+						@include font-size(20);
+					}
+					small{
+						display: block;
+						@include font-size(16);
+					}
+				}
+				&:hover{
+
+					@include mq(tb-min){
+						>a{
+							color: $red;
+						}
+						.header-nav__menu-sub{
+							&:after{
+								border: solid $red;
+								border-width: 0 1px 1px 0;
+							}
+						}
+						.header-nav__submenu{
+							display: block;
+						}
+					}
+				}
+			}
+			&-sub{
+				display: inline-block;
+				position: relative;
+				margin: 0 0 0 7px;
+				@include mq(tb-min){
+					pointer-events: none;
+				}
+				@include mq(tb){
+					width: 30px;
+					height: 50px;
+					display: flex;
+					justify-content: center;
+					align-items: center;
+					margin: 0;
+					position: absolute;
+					top: 0;
+					right: 0;
+					padding: 0 0 6px;
+					&.active{
+						&:after{
+							top: 3px;
+							transform: rotate(-135deg);
+						}
+					}
+				}
+				&:after{
+					content: "";
+					border: solid black;
+					border-width: 0 1px 1px 0;
+					display: inline-block;
+					padding: 3px;
+					transform: rotate(45deg);
+					@include smooth-transition;
+					position: relative;
+				}
+			}
+
+		}
+		&__submenu{
+			position: absolute;
+			top: 100%;
+			left: 0;
+			right: 0;
+			background: $red;
+			padding: 40px;
+			color: white;
+			display: none;
+			@include mq(tb){
+				position: static;
+				padding: 30px 15px;
+			}
+			&-attorney{
+				@include flex(0,0,wrap);
+				margin-bottom: 20px;
+				li{
+					width: 33.333%;
+					margin-bottom: 30px;
+					@include mq(tb){
+						width: 100%;
+						margin-bottom: 0;
+						border-bottom: 1px solid white;
+					}
+					a{
+						@include flex(0,center,wrap);
+						color: white;
+						@include mq(tb){
+							padding: 10px 0;
+						}
+					}
+				}
+				&-img{
+					width: 70px;
+				}
+				&-ct{
+					width: calc(100% - 70px);
+					@include font-size(20);
+					font-weight: 600;
+					line-height: 1.4;
+					padding: 0 0 0 15px;
+					small{
+						display: inline-block;
+						@include font-size(12);
+						font-weight: 400;
+						@include mq(tb){
+							display: block;
+						}
+					}
+					@include mq(tb){
+						br{
+							display: none;
+						}
+					}
+				}
+			}
+			&-btn{
+				display: inline-block;
+				background: white;
+				@include font-size(14);
+				color: $red;
+				font-weight: 500;
+				padding: 11px 21px;
+				@include mq(tb){
+					display: block;
+					width: 100%;
+					position: relative;
+					&:after{
+						content: "";
+						width: 30px;
+						height: 5px;
+						background: url("../img/common/icon-arrow-right05.svg")no-repeat;
+						background-size: 100%;
+						position: absolute;
+						@include v-align;
+						right: 10px;
+					}
+				}
+			}
+			&-item{
+				margin-bottom: 10px;
+				@include mq(tb){
+					margin-bottom: 30px;
+				}
+			}
+			&-ttl{
+				display: block;
+				overflow: hidden;
+				@include font-size(14);
+				font-weight: 500;
+				span{
+					position: relative;
+					padding: 10px 10px 10px 0;
+					display: inline-block;
+					&:after{
+						content: "";
+						width: 5000px;
+						height: 1px;
+						background: white;
+						position: absolute;
+						top: 20px;
+						left: 100%;
+					}
+				}
+			}
+			&-feature{
+				@include flex(0,0,wrap);
+				li{
+					width: 25%;
+					margin-bottom: 30px;
+					@include mq(tb){
+						width: 100%;
+						margin: 0;
+						border-bottom: 1px solid white;
+					}
+				}
+				a{
+					@include flex(0,center,wrap);
+					color: white;
+					@include mq(tb){
+						padding: 10px 0;
+					}
+				}
+				&-img{
+					width: 36px;
+				}
+				&-ct{
+					width: calc(100% - 36px);
+					padding: 0 0 0 10px;
+					@include font-size(16);
+					font-weight: 600;
+					small{
+						display: block;
+						@include font-size(12);
+						padding: 5px 0 0;
+					}
+				}
+			}
+		}
+		&__btn{
+			width: 184px;
+			height: 55px;
+			@include flex(center,center,wrap);
+			align-content: space-evenly;
+			text-align: center;
+			position: relative;
+			background: black;
+			color: white;
+			@include font-size(16);
+			line-height: 1;
+			font-weight: 500;
+			padding: 0 0 3px 20px;
+			@include mq(tb){
+				order: 2;
+				width: 100%;
+				max-width: 350px;
+				height: 63px;
+				@include font-size(20);
+				margin: 30px auto;
+			}
+			span{
+				display: block;
+				width: 100%;
+				@include mq(tb){
+					width: auto;
+				}
+			}
+			small{
+				display: block;
+				width: 100%;
+				@include font-size(12);
+				@include mq(tb){
+					width: auto;
+				}
+			}
+			&:before{
+				content: "";
+				width: 18px;
+				height: 15px;
+				background: url("../img/common/icon-email.svg")no-repeat;
+				background-size: 100%;
+				position: absolute;
+				@include v-align;
+				left: 20px;
+			}
+		}
+	}
+	.js-mobile {
+		width: 63px;
+		position: absolute;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		background: black;
+		cursor: pointer;
+		z-index: 12;
+		display: none;
+		@include mq(tb){
+			@include flex(center,center);
+		}
+		span{
+			position: relative;
+			display: block;
+			width: 22px;
+			height: 1px;
+			background: white;
+			&:before,&:after{
+				position: absolute;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				background: white;
+				content: '';
+				-webkit-transition: -webkit-transform 0.3s;
+				transition: transform 0.3s;
+				border-radius: 3px;
+			}
+			&:before{
+				-webkit-transform: translateY(-250%);
+				transform: translateY(-250%);
+				top: -4px;
+			}
+			&:after{
+				-webkit-transform: translateY(250%);
+				transform: translateY(250%);
+				bottom: -4px;
+			}
+		}
+		&--close {
+			span{
+				background-color: transparent;
+				&:before,&:after{
+					width: 100%;
+					background: white;
+				}
+				&:before {
+					-webkit-transform: translateY(0) rotate(45deg);
+					transform: translateY(0) rotate(45deg);
+					top: 2px;
+				}
+				&:after {
+					-webkit-transform: translateY(0) rotate(-45deg);
+					transform: translateY(0) rotate(-45deg);
+					bottom: -2px;
+				}
+			}
+		}
+	}
+}
+
+
+.js-locked {
+	overflow: hidden;
+	-ms-touch-action: none;
+	touch-action: none;
+	body {
+		-webkit-overflow-scrolling: auto;
+	}
+}

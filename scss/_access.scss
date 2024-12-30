@@ -1,0 +1,251 @@
+@use "vars" as *;
+
+
+#page-access{
+	.mv-page{
+		&__ct{
+			padding-bottom: 157px
+		}
+	}
+	.intro-page{
+		padding-bottom: 70px;
+		@include mq{
+			padding-bottom: 30px;
+		}
+	}
+}
+.store-main{
+	padding-bottom: 100px;
+	@include mq{
+		padding-bottom: 50px;
+	}
+	&__top{
+		@include flex(0,center,wrap);
+		margin-bottom: 74px;
+		@include mq{
+			margin-bottom: 30px;
+		}
+		&-map{
+			width: 50.9%;
+			@include mq(sm){
+				width: 100%;
+				margin-bottom: 15px;
+			}
+			iframe{
+				width: 100%;
+				height: 340px;
+			}
+		}
+		&-ct{
+			width: calc(100% - 50.9%);
+			padding-left: min(4.167vw, 60px);
+			@include mq(sm){
+				width: 100%;
+				padding-left: 0;
+			}
+			p{
+				margin-bottom: 30px;
+				@include mq{
+					margin-bottom: 15px;
+				}
+			}
+			span{
+				margin-bottom: 5px;
+				font-weight: 500;
+				display: block;
+			}
+			.c-btn__01{
+				@include mq{
+					margin: 0 auto;
+				}
+			}
+		}
+	}
+	&__block{
+		margin-bottom: 78px;
+		@include mq{
+			margin-bottom: 50px;
+			.c-ttl__03{
+				text-align: center;
+			}
+		}
+		&:last-of-type{
+			margin-bottom: 0;
+			padding-bottom: 100px;
+			border-bottom: 1px solid #D0D0D0;
+			@include mq{
+				padding-bottom: 50px;
+			}
+			.c-ttl__03{
+				text-align: center;
+				span{
+					border-bottom: 1px solid;
+					&:after{
+						display: none;
+					}
+				}
+			}
+		}
+		&-desc{
+			text-align: center;
+			margin-bottom: 30px;
+			@include mq{
+				text-align: left;
+			}
+		}
+		&-schedule{
+			max-width: 687px;
+			margin: 0 auto;
+		}
+		&-list{
+			@include mq(md-min){
+				display: grid;
+				grid-template-columns: 1fr 1fr 1fr;
+				gap: 30px 20px;
+			}
+			@include mq{
+				padding-bottom: 37px;
+				.slick-arrow{
+					width: 50px;
+					height: 50px;
+					bottom: 0;
+					top: auto;
+					&:before{
+						content: "";
+						width: 50px;
+						height: 50px;
+						display: block;
+						opacity: 1;
+						
+					}
+					&.slick-prev{
+						left: 50%;
+						transform: translate(-200%, 80%);
+						&::before{
+							background: url(../img/access/ico-prev.png) no-repeat center/100%;
+						}
+					}
+					&.slick-next{
+						right: 50%;
+						transform: translate(200%, 80%);
+						&::before{
+							background: url(../img/access/ico-next.png) no-repeat center/100%;
+						}
+					}
+				}
+			}
+		}
+		&-img{
+			margin-bottom: 7px;
+			img{
+				width: 100%;
+			}
+		}
+		&-intro{
+			text-align: center;
+			margin-bottom: 30px;
+			@include mq{
+				text-align: left;
+			}
+		}
+		&-wp{
+			@include flex(0, center,wrap);
+			max-width: 756px;
+			width: 100%;
+			margin: 0 auto;
+			.store-main__block{
+				&-img{
+					width: 65.87%;
+					@include mq{
+						width: 60%;
+					}
+					@include mq(sm){
+						width: 100%;
+					}
+				}
+				&-ct{
+					width: calc(100% - 65.87%);
+					padding-left: 26px;
+					line-height: 2.15;
+					@include mq{
+						width: 40%;
+					}
+					@include mq(sm){
+						width: 100%;
+						padding-left: 0;
+						line-height: 1.8;
+					}
+				}
+			}
+		}
+	}
+}
+
+
+.pagingInfo{
+	@include font-size(19.5);
+	text-align: center;
+	display: block;
+	width: 100%;
+}
+
+.office-info{
+	padding-bottom: 123px;
+	@include mq{
+		padding-bottom: 50px;
+	}
+	.c-ttl__01{
+		margin-bottom: 40px;
+		@include mq{
+			margin-bottom: 30px;
+		}
+	}
+	&__intro{
+		text-align: center;
+		margin-bottom: 30px;
+		@include mq(sm){
+			text-align: left;
+		}
+	}
+	&__wp{
+		@include flex(0,center,wrap);
+		&-map{
+			width: 50.9%;
+			@include mq(sm){
+				width: 100%;
+				margin-bottom: 20px;
+			}
+			iframe{
+				width: 100%;
+				height: 340px;
+			}
+		}
+		&-ct{
+			width: calc(100% - 50.9%);
+			padding-left: min(4.167vw, 60px);
+			@include mq(sm){
+				width: 100%;
+				padding-left: 0;
+			}
+			p{
+				margin-bottom: 30px;
+				padding-bottom: 30px;
+				border-bottom: 1px solid #D0D0D0;
+				@include mq{
+					padding-bottom: 20px;
+					margin-bottom: 20px;
+				}
+				&:last-of-type{
+					border-bottom: none;
+					padding-bottom: 0;
+				}
+			}
+			span{
+				margin-bottom: 5px;
+				font-weight: 500;
+				display: block;
+			}
+		}
+	}
+	
+}
