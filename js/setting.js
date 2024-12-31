@@ -91,10 +91,49 @@ if ($(window).width() < 835) {
 	});
 
 	$('.js-reason-sp').slick({
-		slidesToShow: 1,
 		centerMode: true,
 		slidesToScroll: 1,
 		infinite: false,
+		responsive: [
+			{
+				breakpoint: 835,
+				settings: {
+					slidesToShow: 2,
+					initialSlide: 1,
+				}
+			},
+			{
+				breakpoint: 640,
+				settings: {
+					slidesToShow: 1,
+					initialSlide: 0,
+				}
+			}
+		]
+	});
+
+	$('.js-column-slider02').slick({
+		slidesToShow: 3,
+		slidesToScroll: 1,
+		autoplay: false,
+		autoplaySpeed: 2000,
+		dots: true,
+		responsive: [
+			{
+				breakpoint: 835,
+				settings: {
+					slidesToShow: 2,
+					
+				}
+			},
+			{
+				breakpoint: 640,
+				settings: {
+					centerMode: true,
+					slidesToShow: 1,
+				}
+			}
+		]
 	});
 }
 
@@ -111,10 +150,12 @@ $(window).on("load",function(){
 // matchHeight
 jQuery(function ($) {
 	$('.business-reasons__list-item').matchHeight();
+	$('.business-solution__list-ttl').matchHeight();
 	$('.column-list .column-list__item .column-list__box').matchHeight();
 	$(window).on("load resize", function () {
 		$('.business-reasons__list-item').matchHeight();
 		$('.column-list .column-list__item .column-list__box').matchHeight();
+		$('.business-solution__list-ttl').matchHeight();
 	});
 });
 
@@ -123,3 +164,9 @@ $('.view-plan').click(function () {
 	$(this).prev().toggleClass('is-show');
 	$(this).toggleClass('is-hide');
 });
+
+
+$('.fee-faq__dt').click(function () {
+	$(this).toggleClass('is-open');
+	$(this).next().slideToggle();
+})

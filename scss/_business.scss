@@ -77,6 +77,9 @@
 	}
 	&__img{
 		width: 424px;
+		@include mq(tb){
+			width: 300px;
+		}
 		@include mq{
 			width: 100%;
 		}
@@ -84,6 +87,9 @@
 	&__ct{
 		width: calc(100% - 424px);
 		padding-left: min(7.639vw, 110px);
+		@include mq(tb){
+			width: calc(100% - 300px);
+		}
 		@include mq{
 			width: 100%;
 			padding-left: 15px;
@@ -149,14 +155,17 @@
 		}
 		&-img{
 			width: 230px;
-			@include mq{
+			@include mq(sm){
 				margin: 0 auto;
 			}
 		}
 		&-ct{
 			width: calc(100% - 230px);
 			padding-left: 50px;
-			@include mq{
+			@include mq(tb){
+				padding-left: 30px;
+			}
+			@include mq(sm){
 				padding-left: 0;
 				padding-top: 30px;
 				width: 100%;
@@ -276,10 +285,13 @@
 	&__list{
 		counter-reset: li;
 		margin-bottom: 43px;
-		@include mq(sm-min){
+		@include mq(md-min){
 			display: grid;
 			grid-template-columns: repeat(4, 1fr);
 			gap: 0 50px;
+		}
+		@include mq(tb){
+			gap: 0 15px;
 		}
 		@include mq{
 			padding-bottom: 50px;
@@ -328,8 +340,14 @@
 			padding: 0 23px 16px;
 			@include font-size(14);
 			position: relative;
+			@include mq(tb){
+				padding: 0 15px 16px;
+			}
 			@include mq{
 				margin-right: 24px;
+				@include mq(sm-min){
+					padding: 0 15px 15px;
+				}
 			}
 			&::before{
 				content: "0"counter(li);
@@ -423,11 +441,13 @@
 	&__list{
 		display: grid;
 		grid-template-columns: repeat(3, 1fr);
-		gap: 120px 100px;
+		gap: min(8.333vw, 120px) min(6.944vw, 100px);
 		overflow: hidden;
+		@include mq(tb){
+			gap: 38px 40px;
+		}
 		@include mq{
 			grid-template-columns: 1fr;
-			gap: 38px 40px;
 		}
 		&-item{
 			position: relative;
@@ -442,6 +462,9 @@
 				bottom: -60px;
 				left: 0;
 				background: $red;
+				@include mq(tb){
+					bottom: -22px;
+				}
 				@include mq{
 					display: none;
 				}
@@ -515,6 +538,9 @@
 	left: 50%;
 	transform: translateX(-50%);
 	margin-top: 30px;
+	@include mq(md-min){
+		display: none;
+	}
 	span{
 		&:nth-child(2){
 			display: none;
@@ -675,6 +701,10 @@
 	background: $red;
 	position: relative;
 	margin-bottom: 110px;
+	@include mq{
+		padding-bottom: 50px;
+		margin-bottom: 50px;
+	}
 	@include p-before(100%, 180px){
 		background: #fff;
 		top: 0;
@@ -684,26 +714,47 @@
 		background: #fff;
 		box-shadow: 3px 0 14px rgba($color: #000000, $alpha: 0.1);
 		position: relative;
-		padding: 100px 130px 130px;
+		padding: min(6.944vw, 100px) min(9.028vw, 130px) min(9.028vw, 130px);
 		z-index: 10;
+		@include mq{
+			padding: 30px 30px;
+		}
 		@include p-before(70px, 70px){
 			background: url(../img/business/before.png) no-repeat center/100%;
 			top: 30px;
 			left: 30px;
+			@include mq{
+				width: 40px;
+				height: 40px;
+				top: 20px;
+				left: 20px;
+			}
 		}
 		@include p-after(70px, 70px){
 			background: url(../img/business/before.png) no-repeat center/100%;
 			transform: rotate(90deg);
 			top: 30px;
 			right: 30px;
+			@include mq{
+				width: 40px;
+				height: 40px;
+				top: 20px;
+				right: 20px;
+			}
 		}
 	}
 	&__intro{
 		text-align: center;
 		margin-bottom: 60px;
+		@include mq{
+			margin-bottom: 30px;
+		}
 	}
 	&__dl{
 		margin-bottom: 38px;
+		@include mq{
+			margin-bottom: 25px;
+		}
 		&:last-of-type{
 			margin-bottom: 0;
 		}
@@ -712,13 +763,27 @@
 		@include font-size(20);
 		font-weight: 700;
 		color: $red;
+		@include mq{
+			@include font-size(17);
+		}
 	}
 
 	&__list{
 		display: grid;
 		grid-template-columns: 1fr 1fr;
-		gap: 0 65px;
-		margin-bottom: 180px;
+		gap: 0 min(4.514vw, 65px);
+		margin-bottom: min(12.5vw, 180px);
+		@include mq{
+			grid-template-columns: 1fr;
+			gap: 40px 0;
+			max-width: 500px;
+			margin: 0 auto 50px;
+		}
+		.c-btn__01{
+			@include mq(md-min){
+				display: none;
+			}
+		}
 		&-label{
 			@include font-size(16);
 			font-weight: 500;
@@ -730,6 +795,10 @@
 			border-radius: 30px;
 			margin-bottom: 45px;
 			position: relative;
+			@include mq{
+				padding: 5px 0;
+				margin-bottom: 40px;
+			}
 			@include p-after(1px, 20px){
 				background: $red;
 				bottom: -30px;
@@ -742,22 +811,43 @@
 			color: #fff;
 			border-radius: 5px 5px 0 0;
 			@include font-size(14);
+			@include mq{
+				padding: 40px 20px;
+			}
 		}
 		&-ttl{
 			text-align: center;
 			@include font-size(22);
 			font-weight: 500;
 			margin-bottom: 15px;
+			@include mq{
+				@include font-size(20);
+			}
 		}
 		&-img{
 			border-radius: 0 0 5px 5px;
 			overflow: hidden;
+			@include mq{
+				margin-bottom: 20px;
+			}
+		}
+		&-note{
+			text-align: center;
+			@include font-size(14);
+			display: block;
+			margin-top: 10px;
+			@include mq(md-min){
+				display: none;
+			}
 		}
 	}
 }
 
 .solution-example{
-	padding-bottom: 132px;
+	padding-bottom: min(9.167vw, 132px);
+	@include mq{
+		padding-bottom: 50px;
+	}
 	.c-ttl__05{
 		margin-bottom: 14px;
 	}
@@ -767,9 +857,20 @@
 }
 
 .business-relative{
-	padding-bottom: 150px;
+	padding-bottom: min(10.417vw, 150px);
+	@include mq{
+		padding-bottom: 50px;
+	}
 	.column-list{
 		margin: 0 -27px;
+		@include mq{
+			padding: 0 5%;
+			&.js-column-slider{
+				.slick-dots{
+					bottom: 20px;
+				}
+			}
+		}
 		&__item{
 			padding: 0 27px;
 			margin-bottom: 48px;
@@ -801,6 +902,9 @@
 
 #page-business{
 	.fee-faq{
-		padding-bottom: 133px;
+		padding-bottom: min(9.236vw, 133px);
+		@include mq{
+			padding-bottom: 50px;
+		}
 	}
 }
