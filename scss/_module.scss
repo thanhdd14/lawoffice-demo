@@ -103,7 +103,7 @@ main{
 		right: 0;
 		@include mq{
 			width: 278px;
-			@include aspect-ratio(278, 297);
+			@include aspect-ratio(250, 297);
 			position: absolute;
 			img{
 				width: 100%;
@@ -148,6 +148,18 @@ main{
 		margin-bottom: 20px;
 		&:last-of-type{
 			margin-bottom: 0;
+		}
+	}
+	&__ttl{
+		display: block;
+		text-align: center;
+		@include fts(26,42);
+		font-weight: 600;
+		font-family: $font-jp;
+		margin-bottom: 30px;
+		@include mq(){
+			@include fts(18,26);
+			margin-bottom: 20px;
 		}
 	}
 }

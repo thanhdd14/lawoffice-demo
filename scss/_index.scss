@@ -732,14 +732,22 @@
 	}
 }
 .attorney-list{
-	margin: 0 -25px 67px;
+	@include flex(0,0,wrap);
+	margin: 0 -22px 67px;
 	@include mq(){
-		margin: 0 0 95px;
+		margin: 0 -10px 95px;
+		&.js-attorney-slider{
+			margin-left: 10px;
+			margin-right: 10px;
+		}
 	}
 	.slick-list {
 		padding: 0 11.5% !important;
 		@include mq(){
 			padding: 0 !important;
+		}
+		.attorney-list__item{
+			margin-bottom: 0;
 		}
 	}
 	.slick-arrow{
@@ -776,7 +784,20 @@
 		}
 	}
 	&__item{
+		width: 33.333%;
 		padding: 0 22px;
+		margin-bottom: 50px;
+		@include mq(){
+			width: 50%;
+			padding: 0 10px;
+		}
+		@include mq(sm){
+			width: 100%;
+			margin-bottom: 40px;
+			&:last-child{
+				margin-bottom: 0;
+			}
+		}
 	}
 	&__box{
 		display: block;
@@ -1441,6 +1462,7 @@
 .sec-contact{
 	min-height: 530px;
 	@include flex(0,center,wrap);
+	z-index: 2;
 	@include mq(){
 		min-height: 100px;
 	}

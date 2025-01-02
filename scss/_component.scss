@@ -109,6 +109,10 @@ Component
 		position: absolute;
 		text-transform: uppercase;
 		letter-spacing: 5px;
+		@include mq{
+			@include font-size(42);
+			letter-spacing: 3.5px;
+		}
 		&--wt{
 			color: #fff;
 		}
@@ -164,7 +168,7 @@ Component
 		@include font-size(16);
 		font-weight: 500;
 		margin-bottom: 30px;
-		span{
+		>span{
 			display: inline-block;
 			padding: 0 10px 0 0;
 			position: relative;
@@ -177,10 +181,25 @@ Component
 				@include v-align;
 				left: 100%;
 			}
+			span{
+				display: block;
+			}
+			.c-ft--en{
+				@include font-size(20);
+				@include mq(){
+					@include font-size(18);
+				}
+			}
+			.c-ft--jp{
+				@include font-size(26);
+				@include mq(){
+					@include font-size(20);
+				}
+			}
 		}
 		&.c-fc--red{
 			color: $red;
-			span{
+			>span{
 				&:after{
 					background: $red;
 				}
@@ -188,7 +207,7 @@ Component
 		}
 		&.c-fc--navy{
 			color: $navy;
-			span{
+			>span{
 				&:after{
 					background: $navy;
 				}
@@ -202,8 +221,8 @@ Component
 		font-family: $font-jp;
 		@include font-size(26);
 		font-weight: 600;
-		line-height: 1.2;
-		padding: 0 0 67px;
+		line-height: 1.4;
+		padding: 0 0 55px;
 		margin-bottom: 30px;
 		&:after{
 			content: "";
@@ -226,6 +245,15 @@ Component
 			left: 0;
 			right: 0;
 			margin: 0 auto;
+		}
+		span{
+			display: block;
+		}
+		.c-ft--en{
+			font-family: $font-Roboto;
+			@include font-size(18);
+			font-weight: 500;
+			margin-bottom: 10px;
 		}
 	}
 	&__05{
@@ -266,6 +294,10 @@ Component
 			text-align: left;
 			padding-bottom: 30px;
 			margin-bottom: 40px;
+			@include mq{
+				padding-bottom: 15px;
+				margin-bottom: 20px;
+			}
 			&::before{
 				display: none;
 			}
@@ -309,6 +341,30 @@ Component
 				border-bottom: 1px solid;
 				text-transform: uppercase;
 				letter-spacing: 1px;
+			}
+		}
+	}
+	&__06{
+		display: block;
+		text-align: center;
+		line-height: 1.4;
+		margin-bottom: 30px;
+		@include mq(){
+			margin-bottom: 20px;
+		}
+		span{
+			display: block;
+		}
+		.c-ft--jp{
+			@include font-size(16);
+			font-family: $font-basic;
+			font-weight: 500;
+			margin-bottom: 5px;
+		}
+		.c-ft--en{
+			@include font-size(38);
+			@include mq(){
+				@include font-size(26);
 			}
 		}
 	}
@@ -384,6 +440,9 @@ Component
 			&:hover{
 				background: black;
 				color: white;
+				&:after{
+					background: url(../img/common/icon-arrow-right02.svg) no-repeat center/100%;
+				}
 			}
 		}
 	}

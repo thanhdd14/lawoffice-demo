@@ -13,9 +13,6 @@ $('.header-nav__menu-sub').on('click', function(){
 
 
 
-
-
-
 $('.mv-slider').slick({
 	dots: true,
 	focusOnSelect: true,
@@ -49,6 +46,7 @@ $('.js-attorney-slider').slick({
 		}
 	]
 });
+
 $('.js-column-slider').slick({
 	
 	slidesToShow: 3,
@@ -160,13 +158,45 @@ jQuery(function ($) {
 });
 
 
-$('.view-plan').click(function () {
-	$(this).prev().toggleClass('is-show');
-	$(this).toggleClass('is-hide');
-});
-
-
-$('.fee-faq__dt').click(function () {
-	$(this).toggleClass('is-open');
-	$(this).next().slideToggle();
+$(function () {
+	$('.view-plan').click(function () {
+		$(this).prev().toggleClass('is-show');
+		$(this).toggleClass('is-hide');
+	});
+	
+	
+	$('.fee-faq__dt').click(function () {
+		$(this).toggleClass('is-open');
+		$(this).next().slideToggle();
+	})
+	
+	$('.js-switch-option input').on('change',function () {
+		let val_input = $(this).val();
+		console.log(val_input);
+		if (val_input == '採用について' || val_input == 'その他') {
+			$('.option-switch').hide();
+		} else {
+			$('.option-switch').show();
+		}
+	})
 })
+
+$(function () {
+	var headerHeight = $('#header').outerHeight();
+	var urlHash = location.hash;
+	if (urlHash) {
+		$('body,html').stop().scrollTop(0);
+		setTimeout(function () {
+			var target = $(urlHash);
+			var position = target.offset().top - headerHeight;
+			$('body,html').stop().animate({scrollTop: position}, 1000);
+		}, 100);
+	}
+	
+	$('.scroll-page').click(function () {
+		var href = $(this).attr("href");
+		var target = $(href);
+		var position = target.offset().top - headerHeight;
+		$('body,html').stop().animate({scrollTop: position}, 1000);
+	});
+});

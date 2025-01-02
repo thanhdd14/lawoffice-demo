@@ -1,0 +1,22 @@
+@use "vars" as *;
+
+.sec-practices{
+	z-index: 1;
+	padding: 0 0 100px 0;
+	@include mq(){
+		padding: 30px 0 0;
+	}
+	&:before{
+		content: "";
+		position: absolute;
+		top: -200px;
+		left: 0;
+		right: 0;
+		bottom: -200px;
+		background: #F7F7F7;
+	}
+	.inner{
+		position: relative;
+		z-index: 1;
+	}
+}
