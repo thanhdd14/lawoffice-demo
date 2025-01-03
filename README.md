@@ -19,3 +19,5 @@ https://raw.githack.com/thanhdd14/lawoffice-demo/main/lawyers/index.html
 https://raw.githack.com/thanhdd14/lawoffice-demo/main/office/index.html
 
 https://raw.githack.com/thanhdd14/lawoffice-demo/main/practice/index.html
+
+https://raw.githack.com/thanhdd14/lawoffice-demo/main/about/index.html
