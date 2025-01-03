@@ -9788,6 +9788,9 @@ input[type=number] {
     width: 100%;
     padding: 0 15px;
   }
+  .about-heading__ct--custom-sp {
+    padding: 0 25px;
+  }
 }
 .about-heading__ct-name {
   display: block;
@@ -9813,7 +9816,7 @@ input[type=number] {
   display: block;
   line-height: 1.3;
   font-weight: 500;
-  font-size: clamp(2.6rem, 2.6388vw, 3.8rem);
+  font-size: clamp(2.8rem, 2.6388vw, 3.8rem);
   color: white;
   margin-bottom: 40px;
 }
@@ -9835,7 +9838,8 @@ input[type=number] {
 }
 @media screen and (max-width: 834px) {
   .about-heading__ct-note span {
-    background-size: 200% 36px;
+    background-size: 200% 40px;
+    background-position: 0 15px;
   }
 }
 .about-heading__ct-ttl {
@@ -9889,9 +9893,21 @@ input[type=number] {
 .about-heading__ct table {
   width: 100%;
 }
+@media screen and (max-width: 834px) {
+  .about-heading__ct table tr {
+    display: block;
+    padding: 10px 0;
+  }
+}
 .about-heading__ct table tr th, .about-heading__ct table tr td {
   padding: 10px 0;
   vertical-align: top;
+}
+@media screen and (max-width: 834px) {
+  .about-heading__ct table tr th, .about-heading__ct table tr td {
+    display: block;
+    padding: 0;
+  }
 }
 .about-heading__ct table tr th {
   width: 100px;
@@ -9900,11 +9916,17 @@ input[type=number] {
 }
 @media screen and (max-width: 834px) {
   .about-heading__ct table tr th {
-    width: 70px;
+    width: 100%;
   }
 }
 .about-heading__ct table tr td {
   padding-left: 10px;
+}
+@media screen and (max-width: 834px) {
+  .about-heading__ct table tr td {
+    width: 100%;
+    padding-left: 0;
+  }
 }
 .about-heading__ct table tr td dl {
   display: -ms-flexbox;
