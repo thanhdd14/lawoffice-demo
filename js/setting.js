@@ -48,12 +48,11 @@ $('.js-attorney-slider').slick({
 });
 
 $('.js-column-slider').slick({
-	
 	slidesToShow: 3,
 	slidesToScroll: 1,
 	autoplay: false,
 	autoplaySpeed: 2000,
-	dots: true,
+	dots: false,
 	responsive: [
 		{
 			breakpoint: 835,
