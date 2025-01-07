@@ -96,7 +96,7 @@
 		position: absolute;
 		left: 3.6%;
 		@include v-align;
-		font-size: clamp(2.4rem,1.66666vw,4.2rem);
+		font-size: clamp(2.4rem,2.91666vw,4.2rem);
 		font-weight: bold;
 		@include mq(){
 			font-size: 6.4vw;
@@ -519,6 +519,7 @@
 			}
 			time{
 				display: block;
+				font-family: $font-Roboto;
 				width: 107px;
 				letter-spacing: 1.5px;
 			}
@@ -824,7 +825,8 @@
 
 .top-practices{
 	padding: 100px 0 178px;
-	background: #F7F7F7;
+	background: rgb(243,243,243);
+	background: linear-gradient(180deg, rgba(243,243,243,1) 0%, rgba(226,226,226,1) 100%);
 	@include mq(){
 		padding: 32px 0 191px;
 		background: #D9D9D9;
@@ -1245,6 +1247,7 @@
 			time{
 				display: block;
 				color: #8F8F8F;
+				font-family: $font-Roboto;
 			}
 		}
 		&-ttl{
@@ -1533,6 +1536,10 @@
 				right: 7px;
 			}
 		}
+	}
+	.c-ttl__03{
+		font-family: $font-jp;
+		font-weight: 600;
 	}
 	&__tel{
 		display: block;

@@ -44,7 +44,7 @@ main{
 .mv-page{
 	position: relative;
 	z-index: 2;
-	overflow: hidden;
+	//overflow: hidden;
 	&__wp{
 		@include flex(0,0,wrap);
 	}
@@ -53,9 +53,12 @@ main{
 		margin-top: 63px;
 		padding-bottom: 110px;
 		padding-top: 64px;
-		padding-left: 8.2vw;
+		padding-left: calc((100% - 1200px)/2);
 		position: relative;
 		z-index: 2;
+		@include mq(xl){
+			padding-left: 5%;
+		}
 		@include mq(tb){
 			padding-left: 4.2vw;
 		}
@@ -101,6 +104,7 @@ main{
 		position: absolute;
 		top: 0;
 		right: 0;
+		max-width: 700px;
 		@include mq{
 			width: 278px;
 			@include aspect-ratio(250, 297);
@@ -113,13 +117,21 @@ main{
 		}
 	}
 
-	@include p-after(65.48%, 100%){
+	@include p-after(65.48%, calc(100% - 64px)){
 		background: #B01D3A;
 		mix-blend-mode: multiply;
 		top: 64px;
 		left: 0;
 		@include mq{
 			top: 102px;
+		}
+	}
+
+	&--short{
+		.mv-page{
+			&__ct{
+				padding-bottom: 157px;
+			}
 		}
 	}
 }
@@ -130,11 +142,12 @@ main{
 	max-width: 974px;
 	width: 74%;
 	margin: 0 auto;
-	padding: 70px 112px 100px;
+	padding: 70px 112px 70px;
 	position: relative;
 	z-index: 3;
 	transform: translateY(-214px);
 	margin-bottom: -133px;
+	min-height: 224px;
 	@include mq(tb){
 		margin-bottom: -170px;
 	}

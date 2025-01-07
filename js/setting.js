@@ -11,6 +11,26 @@ $('.header-nav__menu-sub').on('click', function(){
 	$(this).next(".header-nav__submenu").slideToggle();
 });
 
+//resize slider load page
+var window_type;
+var $window = $(window);
+if ($window.width() <= 834) {
+    window_type = 'sp';
+} else {
+    window_type = 'pc';
+}
+$(window).resize(function() {
+    if($window.width() <= 834){
+        if( (window_type != 'sp') ){
+            location.reload();
+        }
+    }else{
+        if(window_type != 'pc'){
+            location.reload();
+        }
+    }
+});
+
 
 
 $('.mv-slider').slick({

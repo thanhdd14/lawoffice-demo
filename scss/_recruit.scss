@@ -187,6 +187,9 @@
 		right: calc((100% - 1100px) / 2);
 		top: 152px;
 		transform: translateX(50%);
+		@include mq(xl){
+			right: 5%;
+		}
 		@include mq{
 			right: 7px;
 			top: 19px;
@@ -197,7 +200,7 @@
 
 .recruit-philosophy{
 	padding: min(13.889vw, 200px) 0 min(11.5vw, 165px);
-	background: url(../img/recruit/bg-philosophy.png) no-repeat center/cover;
+	background: url(../img/recruit/bg-philosophy.png) no-repeat top center/cover;
 	color: #fff;
 	position: relative;
 	@include p-before(0,0){
@@ -273,6 +276,18 @@
 	padding: min(10.417vw, 150px) 0;
 	@include mq{
 		padding: 50px 0;
+	}
+	.c-txt__deco{
+		left: auto;
+		right: calc((100% - 1100px) / 2);
+		@include mq(xl){
+			right: 5%;
+		}
+		@include mq{
+			right: 7px;
+			top: 19px;
+			transform: none;
+		}
 	}
 	.c-ttl__05{
 		color: #000;
@@ -395,10 +410,16 @@
 			padding: 0 10px;
 		}
 	}
+	.c-ttl__05{
+		color: #000;
+	}
 	.c-txt__deco{
 		left: calc((100% - 1100px)/2);
 		top: -26px;
 		transform: translateX(-63%);
+		@include mq(xl){
+			left: 5%;
+		}
 		@include mq{
 			display: none;
 			left: 0;

@@ -587,6 +587,7 @@
 	&__table{
 		margin-bottom: 115px;
 		overflow-x: auto;
+		@include font-size(14);
 		table{
 			// width: 100%;
 			width: 1100px;
@@ -888,6 +889,7 @@
 					letter-spacing: 1px;
 					position: relative;
 					top: -3px;
+					font-family: $font-Roboto;
 				}
 			}
 			&-ttl{
