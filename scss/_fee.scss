@@ -1,10 +1,7 @@
 @use 'vars' as *;
 
 .fee-page{
-	padding-bottom: 200px;
-	@include mq{
-		padding-bottom: 50px;
-	}
+	padding-bottom: 50px;
 	&__intro{
 		text-align: center;
 		margin-bottom: 80px;
@@ -93,7 +90,7 @@
 		width: 100%;
 		border: 1px solid #D0D0D0;
 		@include mq{
-			width: 1100px;
+			width: 920px;
 		}
 		tr{
 			th, td{
@@ -118,6 +115,11 @@
 		}
 	}
 	&--02{
+		table{
+			@include mq(sm){
+				width: 600px;
+			}
+		}
 		tr{
 			th, td{
 				width: 50%;
@@ -137,6 +139,11 @@
 		}
 	}
 	&--04{
+		table{
+			@include mq(){
+				width: 100%;
+			}
+		}
 		tr{
 			td{
 				width: 100%;

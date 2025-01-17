@@ -914,7 +914,7 @@
 		}
 		&--navy{
 			&:after{
-				background: url("../img/common/icon-arrow-right04.svg")no-repeat;
+				background: url("../img/common/icon-arrow-right06.svg")no-repeat;
 				background-size: 100%;
 			}
 		}
@@ -1171,6 +1171,7 @@
 	.slick-arrow{
 		display: none !important;
 	}
+
 	@include mq(){
 		&.js-column-slider{
 			margin: 0 -15px 84px 0;
@@ -1182,6 +1183,7 @@
 			}
 			.slick-dots {
 				bottom: -31px;
+				left: -15px;
 				li{
 					margin: 0 5px;
 					button{
@@ -1482,6 +1484,18 @@
 			display: none;
 		}
 	}
+	&:after{
+		content: "";
+		position: absolute;
+		top: 0;
+		left: 0;
+		bottom: 0;
+		width: 74%;
+		background: rgba(#B01D3A,0.5);
+		@include mq(){
+			display: none;
+		}
+	}
 	.inner{
 		position: relative;
 		z-index: 1;
@@ -1490,6 +1504,7 @@
 .contact-heading{
 	color: white;
 	@include fts(20,32);
+	position: relative;
 	@include mq(){
 		margin: 0 -15px 23px;
 		background: url(../img/common/contact-bg-sp.jpg) no-repeat;
@@ -1503,10 +1518,22 @@
 	&__ttl{
 		display: block;
 		@include font-size(66);
+		text-transform: uppercase;
 		@include mq(){
 			@include font-size(38);
 			text-align: center;
 			margin-bottom: 12px;
+		}
+	}
+	&--consultation{
+		&:before{
+			content: "";
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			background: #rgba(176, 29, 58, 1);
 		}
 	}
 }

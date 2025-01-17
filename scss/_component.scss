@@ -390,13 +390,29 @@ Component
 		margin: 0 auto;
 		z-index: 2;
 		cursor: pointer;
+		overflow: hidden;
 		@include smooth-transition;
 		@include mq(){
 			max-width: 345px;
 		}
-		&:hover{
-			opacity: 1;
+		&:before{
+			content: "";
+			position: absolute;
+			top: -333px;
+			bottom: 0;
+			left: -200px;
+			width: 200%;
+			height: 450px;
 			background: $red;
+			transform: rotate(-25deg) scaleX(0);
+			-webkit-transform-origin: center right;
+			-ms-transform-origin: center right;
+			transform-origin: center right;
+			-webkit-transition: -webkit-transform 0.5s;
+			transition: -webkit-transform 0.5s;
+			-o-transition: transform 0.5s;
+			transition: transform 0.5s;
+			transition: transform 0.5s, -webkit-transform 0.5s;
 		}
 		&:after{
 			content: "";
@@ -407,14 +423,35 @@ Component
 			position: absolute;
 			@include v-align;
 			right: 20px;
+			@include smooth-transition;
 			@include mq(){
 				right: 13%;
+			}
+		}
+		&:hover{
+			opacity: 1;
+			&:before{
+				top:  0;
+				-webkit-transform-origin: center left;
+				-ms-transform-origin: center left;
+				transform-origin: center left;
+				transform: rotate(-25deg) scaleX(1);
+			}
+			span{
+				transform: scale(1.1,1.1);
+			}
+			&:after{
+				transform: scale(1.2,1.2) translateY(-50%);
+				@include mq(md-min){
+					right: 10px;
+				}
 			}
 		}
 		span{
 			display: block;
 			position: relative;
 			z-index: 2;
+			@include smooth-transition;
 		}
 		small{
 			display: block;
@@ -422,7 +459,10 @@ Component
 		}
 		&--red{
 			background: $red;
-			&:hover{
+			//&:hover{
+			//	background: black;
+			//}
+			&:before{
 				background: black;
 			}
 		}
@@ -437,12 +477,19 @@ Component
 					right: 8%;
 				}
 			}
-			&:hover{
+			&:before{
 				background: black;
+			}
+			span{
+				transition: all 0.1s ease;
+			}
+			&:hover{
+				//background: black;
 				color: white;
 				&:after{
 					background: url(../img/common/icon-arrow-right02.svg) no-repeat center/100%;
 				}
+
 			}
 		}
 	}

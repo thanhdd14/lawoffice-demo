@@ -12,17 +12,21 @@
 	@include mq(tb){
 		padding: 15px 12px;
 		&.active{
-			&:after{
-				content: "";
-				height: calc(100vh - 54px);
-				position: absolute;
-				top: 100%;
-				left: 0;
-				right: 0;
-				bottom: 0;
-				background: rgba(black,0.4);
+			.header-bg{
+				display: block;
 			}
 		}
+	}
+	.header-bg{
+		content: "";
+		height: calc(100vh - 54px);
+		position: absolute;
+		top: 100%;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		background: rgba(black,0.4);
+		display: none;
 	}
 	.header-logo{
 		display: block;

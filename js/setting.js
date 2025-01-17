@@ -5,6 +5,12 @@ $('.js-mobile').on('click', function(){
 	$("#header").toggleClass("active");
 	$(".header-nav").toggleClass("active");
 });
+$('.header-bg').on('click', function(){
+	$(".js-mobile").removeClass("js-mobile--close");
+	$("html").removeClass("js-locked");
+	$("#header").removeClass("active");
+	$(".header-nav").removeClass("active");
+});
 $('.header-nav__menu-sub').on('click', function(){
 	$(this).toggleClass("active");
 	
@@ -40,7 +46,8 @@ $('.mv-slider').slick({
 	infinite: true,
 	speed: 500,
 	fade: true,
-	autoplay: false,
+	autoplay: true,
+	autoplaySpeed: 5000,
 	cssEase: 'linear',
 });
 
@@ -72,7 +79,7 @@ $('.js-column-slider').slick({
 	slidesToScroll: 1,
 	autoplay: false,
 	autoplaySpeed: 2000,
-	dots: false,
+	dots: true,
 	responsive: [
 		{
 			breakpoint: 835,
@@ -178,9 +185,13 @@ jQuery(function ($) {
 
 
 $(function () {
+	var position1 = $('.view-plan').offset().top - 100;
 	$('.view-plan').click(function () {
 		$(this).prev().toggleClass('is-show');
 		$(this).toggleClass('is-hide');
+		$('.view-plan.is-hide').click(function () {
+			$(window).scrollTop(position1);
+		});
 	});
 	
 	

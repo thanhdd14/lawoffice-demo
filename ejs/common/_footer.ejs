@@ -1,13 +1,25 @@
 <% if(pageData.template != "contact"){%>
-	<section class="sec-contact">
+	<section class="sec-contact <% if(pageData.template == 'consultation'){ %> contact--consultation <% } %>">
 		<div class="inner">
-			<div class="contact-heading c-ft--jp">
-				<h2 class="contact-heading__ttl c-ft--en">CONTACT</h2>
-				<p>
-					法律相談のご予約やお問い合わせは、<br>
-					メールまたはお電話にて承ります。
-				</p>
-			</div>
+			<% if(pageData.template != "consultation"){%>
+				<div class="contact-heading c-ft--jp">
+					<h2 class="contact-heading__ttl c-ft--en">CONTACT</h2>
+					<p>
+						法律相談のご予約やお問い合わせは、<br>
+						メールまたはお電話にて承ります。
+					</p>
+				</div>
+				<% }
+				else { %>
+					<div class="contact-heading  c-ft--jp">
+						<h2 class="contact-heading__ttl c-ft--en">Reservation</h2>
+						<p>
+							法律相談は予約制となっております。<br>
+							ご予約・ご質問等は、お電話またはメールより承ります。
+						</p>
+					</div>
+				<% } %>
+
 		</div>
 		<div class="contact-ct">
 			<h3 class="c-ttl__03 mb0">
@@ -40,13 +52,17 @@
 		</div>
 	</section>
 <%}%>
+
 <footer id="footer">
 	<div class="inner">
 		<div class="footer-block">
 			<div class="footer-block__note c-txt__basic-small c-ft--jp">
 				<div class="footer-block__note-item">
 					<a href="" class="footer-block__note-logo">
-						<img src="<%= RELATIVE_PATH %>img/common/footer-logo-01.svg" alt="img">
+						<img src="<%= RELATIVE_PATH %>img/common/footer-logo.png" alt="img">
+						<span>
+							法律事務所S(本店)​
+						</span>
 					</a>
 					<p>
 						〒252-0231<br>
@@ -56,7 +72,11 @@
 				</div>
 				<div class="footer-block__note-item">
 					<a href="" class="footer-block__note-logo">
-						<img src="<%= RELATIVE_PATH %>img/common/footer-logo-02.svg" alt="img">
+						<img src="<%= RELATIVE_PATH %>img/common/footer-logo.png" alt="img">
+						<span>
+							法律事務所S横浜オフィス​
+							<small>（弁護士法人 SY従たる事務所）</small>
+						</span>
 					</a>
 					<p>
 						〒231-0023<br>

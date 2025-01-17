@@ -23,6 +23,7 @@ main{
 	position: absolute;
 	top: 10px;
 	left: 0;
+	z-index: 5;
 	@include mq{
 		display: none;
 	}

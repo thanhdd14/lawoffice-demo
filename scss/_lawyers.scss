@@ -1,0 +1,44 @@
+@use "vars" as *;
+
+.lawyers-note{
+	margin-bottom: 150px;
+	@include mq(){
+		margin-bottom: 50px;
+	}
+	&__ttl{
+		display: block;
+		@include font-size(20);
+		line-height: 1.4;
+		font-weight: 600;
+		color: $red;
+		border-bottom: 1px solid $red;
+		letter-spacing: 1px;
+		padding: 0 0 10px;
+		margin-bottom: 15px;
+		@include mq(){
+			@include font-size(18);
+		}
+	}
+	p{
+		margin-bottom: 30px;
+	}
+	&__item{
+		margin-bottom: 50px;
+	}
+	dl{
+		@include flex(between,0,wrap);
+		background: rgba(250, 245, 242, 1);
+		padding: 15px 20px;
+		margin-bottom: 10px;
+		&:last-child{
+			margin-bottom: 0;
+		}
+		dt{
+			width: calc(100% - 50px);
+		}
+		dd{
+			width: 50px;
+			text-align: right;
+		}
+	}
+}

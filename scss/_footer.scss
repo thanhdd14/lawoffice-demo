@@ -32,8 +32,22 @@
 				}
 			}
 			&-logo{
-				display: block;
+				@include flex(0,center,wrap);
 				margin-bottom: 10px;
+				font-weight: 600;
+				@include font-size(20);
+				img{
+					width: 49px;
+				}
+				span{
+					display: block;
+					padding: 0 0 0 10px;
+				}
+				small{
+					display: block;
+					@include font-size(12);
+					font-weight: 500;
+				}
 			}
 		}
 		&__nav{

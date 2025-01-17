@@ -233,6 +233,9 @@
 			@include mq(sm){
 				width: 100%;
 				padding-left: 0;
+				.c-btn__01{
+					margin: 0 auto;
+				}
 			}
 			p{
 				margin-bottom: 30px;

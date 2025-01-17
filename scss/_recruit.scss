@@ -5,6 +5,7 @@
 		line-height: 1.6;
 		margin-bottom: 20px;
 		@include mq{
+			@include font-size(20);
 			margin-bottom: 16px;
 		}
 	}

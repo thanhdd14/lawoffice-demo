@@ -5,6 +5,7 @@
 	padding-bottom: min(9.028vw, 130px);
 	position: relative;
 	@include mq{
+		padding-top: 50px;
 		padding-bottom: 50px;
 	}
 	@include p-before(100%, 200px){
@@ -70,7 +71,7 @@
 .consultation-firsttime{
 	padding: min(6.944vw, 100px) 0 min(11.111vw, 160px);
 	@include mq{
-		padding: 50px 0;
+		padding: 0 0 50px;
 	}
 	&__wrapper{
 		@include flex(0,start,wrap);
@@ -124,7 +125,8 @@
 		background: #FAF5F2;
 		padding: 65px 60px 60px;
 		@include mq{
-			padding: 30px 30px;
+			padding: 30px 20px;
+			margin: 0 -15px;
 		}
 	}
 	&__intro{
@@ -387,14 +389,13 @@
 		top: 0;
 		left: 0;
 		line-height: 1;
-		@include mq(sm-min){
-			writing-mode: tb-rl;
-			width: 40px;
-		}
+		-webkit-writing-mode: vertical-rl;
+		-ms-writing-mode: tb-rl;
+		writing-mode: vertical-rl;
 		@include mq(sm){
-			position: static;
-			display: inline-block;
-			padding: 10px 15px;
+			//position: static;
+			//display: inline-block;
+			padding: 10px 10px;
 			margin-bottom: 15px;
 			letter-spacing: 1px;
 		}
@@ -404,9 +405,9 @@
 		@include mq(tb){
 			padding-left: 60px;
 		}
-		@include mq(sm){
-			padding: 0;
-		}
+		//@include mq(sm){
+		//	padding: 0;
+		//}
 		dl{
 			margin-bottom: 50px;
 			padding-bottom: 30px;
