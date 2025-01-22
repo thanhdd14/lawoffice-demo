@@ -742,6 +742,9 @@
 			margin-right: 10px;
 		}
 	}
+	&.js-attorney-slider{
+		display: block;
+	}
 	.slick-list {
 		padding: 0 11.5% !important;
 		@include mq(){
@@ -1174,6 +1177,7 @@
 
 	@include mq(){
 		&.js-column-slider{
+			display: block;
 			margin: 0 -15px 84px 0;
 			.slick-list{
 				padding: 0 7% 0 0 !important;
@@ -1484,16 +1488,19 @@
 			display: none;
 		}
 	}
-	&:after{
-		content: "";
-		position: absolute;
-		top: 0;
-		left: 0;
-		bottom: 0;
-		width: 74%;
-		background: rgba(#B01D3A,0.5);
-		@include mq(){
-			display: none;
+
+	&.contact--consultation{
+		&:after{
+			content: "";
+			position: absolute;
+			top: 0;
+			left: 0;
+			bottom: 0;
+			width: 74%;
+			background: rgba(#B01D3A,0.5);
+			@include mq(){
+				display: none;
+			}
 		}
 	}
 	.inner{

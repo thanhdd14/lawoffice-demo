@@ -74,29 +74,7 @@ $('.js-attorney-slider').slick({
 	]
 });
 
-$('.js-column-slider').slick({
-	slidesToShow: 3,
-	slidesToScroll: 1,
-	autoplay: false,
-	autoplaySpeed: 2000,
-	dots: true,
-	responsive: [
-		{
-			breakpoint: 835,
-			settings: {
-				slidesToShow: 2,
-				
-			}
-		},
-		{
-			breakpoint: 640,
-			settings: {
-				centerMode: true,
-				slidesToShow: 1,
-			}
-		}
-	]
-});
+
 
 
 if ($(window).width() < 835) {
@@ -159,17 +137,57 @@ if ($(window).width() < 835) {
 			}
 		]
 	});
+	$('.js-column-slider').slick({
+		slidesToShow: 3,
+		slidesToScroll: 1,
+		autoplay: false,
+		autoplaySpeed: 2000,
+		dots: true,
+		responsive: [
+			{
+				breakpoint: 835,
+				settings: {
+					slidesToShow: 2,
+					
+				}
+			},
+			{
+				breakpoint: 640,
+				settings: {
+					centerMode: true,
+					slidesToShow: 1,
+				}
+			}
+		]
+	});
 }
 
 
 
-$(window).on("load",function(){
-	$(".c-table").mCustomScrollbar({
-		axis: "x", // horizontal scrollbar
-		theme:"dark"
-	});
-});
+// $(window).on("load",function(){
+// 	$(".c-table").mCustomScrollbar({
+// 		axis: "x", // horizontal scrollbar
+// 		theme:"dark"
+// 	});
+// });
 
+
+// $('.c-table table').onscroll = function() {
+// 	var scroll = document.body.scrollLeft || document.documentElement.scrollLeft;
+// 	var total = document.documentElement.scrollWidth - document.documentElement.clientWidth;
+// 	document.getElementById("progressBar").style.width = ((scroll/total)*100) + "%";
+// };
+// window.onwheel = function(e) {
+// 	var speed = parseInt(document.documentElement.clientWidth/5);
+//   window.scrollBy(Math.sign(e.deltaY)*speed,0);
+// };
+
+$('.c-table').on('scroll', function () {
+	var scroll = $(this).scrollLeft();
+	var total = $(this).find('table').outerWidth() - $(window).width() + 30;
+	var percent = (20 + (scroll / total) * 80) + "%";
+	$(this).next().find('.progressBar').css('width', percent);
+})
 
 // matchHeight
 jQuery(function ($) {
