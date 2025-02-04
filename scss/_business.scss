@@ -36,12 +36,14 @@
 		.c-ft{
 			&--base{
 				@include font-size(16);
+				font-weight: 500;
 				margin-bottom: 20px;
 			}
 			&--jp{
 				@include font-size(40);
 				font-family: $font-jp;
 				letter-spacing: 4px;
+				font-weight: 600;
 				@include mq{
 					@include font-size(32);
 				}
@@ -592,11 +594,7 @@
 		overflow-x: auto;
 		@include font-size(14);
 		table{
-			// width: 100%;
 			width: 1100px;
-			@include mq(){
-				width: 730px;
-			}
 			tr{
 				th, td{
 					width: calc((100% - 23.63%)/3);

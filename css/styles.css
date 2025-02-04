@@ -15,8 +15,7 @@ reset style
 html {
   overflow-y: scroll;
   overflow-x: hidden;
-  font-size: 10px;
-  /* Base font size, change to 14px or 16px if needed */
+  font-size: 10px; /* Base font size, change to 14px or 16px if needed */
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
 }
@@ -1148,7 +1147,6 @@ a {
   text-decoration: none;
   -webkit-backface-visibility: hidden;
   -webkit-transition: all 0.3s ease;
-  -o-transition: all 0.3s ease;
   transition: all 0.3s ease;
 }
 a:hover {
@@ -1236,7 +1234,6 @@ a:hover {
 @media screen and (min-width: 835px) {
   .u-fn-hover {
     -webkit-transition: all 0.2s;
-    -o-transition: all 0.2s;
     transition: all 0.2s;
   }
   .u-fn-hover:hover {
@@ -1639,7 +1636,6 @@ Component
   overflow: hidden;
   -webkit-backface-visibility: hidden;
   -webkit-transition: all 0.3s ease;
-  -o-transition: all 0.3s ease;
   transition: all 0.3s ease;
 }
 @media screen and (max-width: 834px) {
@@ -1664,7 +1660,6 @@ Component
   transform-origin: center right;
   -webkit-transition: -webkit-transform 0.5s;
   transition: -webkit-transform 0.5s;
-  -o-transition: transform 0.5s;
   transition: transform 0.5s;
   transition: transform 0.5s, -webkit-transform 0.5s;
 }
@@ -1682,7 +1677,6 @@ Component
   right: 20px;
   -webkit-backface-visibility: hidden;
   -webkit-transition: all 0.3s ease;
-  -o-transition: all 0.3s ease;
   transition: all 0.3s ease;
 }
 @media screen and (max-width: 834px) {
@@ -1723,7 +1717,6 @@ Component
   z-index: 2;
   -webkit-backface-visibility: hidden;
   -webkit-transition: all 0.3s ease;
-  -o-transition: all 0.3s ease;
   transition: all 0.3s ease;
 }
 .c-btn__01 small {
@@ -1755,7 +1748,6 @@ Component
 }
 .c-btn__01--solid span {
   -webkit-transition: all 0.1s ease;
-  -o-transition: all 0.1s ease;
   transition: all 0.1s ease;
 }
 .c-btn__01--solid:hover {
@@ -2150,7 +2142,6 @@ input[type=number] {
     background: white;
     -webkit-backface-visibility: hidden;
     -webkit-transition: all 0.3s ease;
-    -o-transition: all 0.3s ease;
     transition: all 0.3s ease;
     z-index: 5;
   }
@@ -2375,7 +2366,6 @@ input[type=number] {
           transform: rotate(45deg);
   -webkit-backface-visibility: hidden;
   -webkit-transition: all 0.3s ease;
-  -o-transition: all 0.3s ease;
   transition: all 0.3s ease;
   position: relative;
 }
@@ -2668,7 +2658,6 @@ input[type=number] {
   content: "";
   -webkit-transition: -webkit-transform 0.3s;
   transition: -webkit-transform 0.3s;
-  -o-transition: transform 0.3s;
   transition: transform 0.3s;
   transition: transform 0.3s, -webkit-transform 0.3s;
   border-radius: 3px;
@@ -3396,7 +3385,6 @@ input[type=number] {
 @media screen and (min-width: 835px) {
   .mv-block__04-ttl span {
     background-image: -webkit-gradient(linear, left top, right top, color-stop(50%, #000), color-stop(50%, transparent));
-    background-image: -o-linear-gradient(left, #000 50%, transparent 50%);
     background-image: linear-gradient(to right, #000 50%, transparent 50%);
     background-size: 200% 10px;
     background-repeat: no-repeat;
@@ -3625,8 +3613,7 @@ input[type=number] {
   width: calc(100% - 177px);
   padding: 0 0 0 22px;
   overflow: hidden;
-  -o-text-overflow: ellipsis;
-     text-overflow: ellipsis;
+  text-overflow: ellipsis;
 }
 @media screen and (min-width: 835px) {
   .news-list__item a p {
@@ -4009,10 +3996,9 @@ input[type=number] {
 
 .top-practices {
   padding: 100px 0 178px;
-  background: #f3f3f3;
-  background: -webkit-gradient(linear, left top, left bottom, from(#f3f3f3), to(#e2e2e2));
-  background: -o-linear-gradient(top, #f3f3f3 0%, #e2e2e2 100%);
-  background: linear-gradient(180deg, #f3f3f3 0%, #e2e2e2 100%);
+  background: rgb(243, 243, 243);
+  background: -webkit-gradient(linear, left top, left bottom, from(rgb(243, 243, 243)), to(rgb(226, 226, 226)));
+  background: linear-gradient(180deg, rgb(243, 243, 243) 0%, rgb(226, 226, 226) 100%);
 }
 @media screen and (max-width: 834px) {
   .top-practices {
@@ -4540,8 +4526,7 @@ input[type=number] {
 }
 .column-list__ct p {
   overflow: hidden;
-  -o-text-overflow: ellipsis;
-     text-overflow: ellipsis;
+  text-overflow: ellipsis;
   -webkit-line-clamp: 3;
   display: -webkit-box;
   -webkit-box-orient: vertical;
@@ -5211,7 +5196,6 @@ input[type=number] {
   cursor: pointer;
   -webkit-backface-visibility: hidden;
   -webkit-transition: all 0.3s ease;
-  -o-transition: all 0.3s ease;
   transition: all 0.3s ease;
 }
 .contact-form__check .mwform-checkbox-field-text:hover {
@@ -5245,7 +5229,6 @@ input[type=number] {
   visibility: hidden;
   -webkit-backface-visibility: hidden;
   -webkit-transition: all 0.3s ease;
-  -o-transition: all 0.3s ease;
   transition: all 0.3s ease;
 }
 .contact-form__check .mwform-checkbox-field input:checked + .mwform-checkbox-field-text:after {
@@ -5340,7 +5323,6 @@ input[type=number] {
           transform: scale(0);
   -webkit-backface-visibility: hidden;
   -webkit-transition: all 0.3s ease;
-  -o-transition: all 0.3s ease;
   transition: all 0.3s ease;
 }
 .wpcf7-list-item input:checked + .wpcf7-list-item-label:after {
@@ -5913,7 +5895,6 @@ input[type=number] {
   right: 0;
   -webkit-backface-visibility: hidden;
   -webkit-transition: all 0.3s ease;
-  -o-transition: all 0.3s ease;
   transition: all 0.3s ease;
 }
 .fee-faq__dt.is-open:after {
@@ -6997,12 +6978,14 @@ input[type=number] {
 }
 .business-mv__ttl .c-ft--base {
   font-size: 1.6rem;
+  font-weight: 500;
   margin-bottom: 20px;
 }
 .business-mv__ttl .c-ft--jp {
   font-size: 4rem;
   font-family: "Noto Serif JP", serif;
   letter-spacing: 4px;
+  font-weight: 600;
 }
 @media screen and (max-width: 834px) {
   .business-mv__ttl .c-ft--jp {
@@ -7711,11 +7694,6 @@ input[type=number] {
 .business-contract__table table {
   width: 1100px;
 }
-@media screen and (max-width: 834px) {
-  .business-contract__table table {
-    width: 730px;
-  }
-}
 .business-contract__table table tr th, .business-contract__table table tr td {
   width: 25.4566666667%;
   text-align: center;
@@ -8022,7 +8000,6 @@ input[type=number] {
   font-size: 1.4rem;
   -webkit-backface-visibility: hidden;
   -webkit-transition: all 0.3s ease;
-  -o-transition: all 0.3s ease;
   transition: all 0.3s ease;
 }
 @media screen and (max-width: 834px) {
@@ -8082,7 +8059,6 @@ input[type=number] {
       align-content: center;
   -webkit-backface-visibility: hidden;
   -webkit-transition: all 0.3s ease;
-  -o-transition: all 0.3s ease;
   transition: all 0.3s ease;
 }
 @media screen and (max-width: 834px) {
@@ -8383,10 +8359,9 @@ input[type=number] {
 .recruit-msg {
   padding-top: 145px;
   padding-bottom: 150px;
-  background: #faf5f2;
-  background: -webkit-gradient(linear, left bottom, left top, from(#faf5f2), color-stop(76%, #faf5f2), to(white));
-  background: -o-linear-gradient(bottom, #faf5f2 0%, #faf5f2 76%, white 100%);
-  background: linear-gradient(0deg, #faf5f2 0%, #faf5f2 76%, white 100%);
+  background: rgb(250, 245, 242);
+  background: -webkit-gradient(linear, left bottom, left top, from(rgb(250, 245, 242)), color-stop(76%, rgb(250, 245, 242)), to(rgb(255, 255, 255)));
+  background: linear-gradient(0deg, rgb(250, 245, 242) 0%, rgb(250, 245, 242) 76%, rgb(255, 255, 255) 100%);
   position: relative;
 }
 .recruit-msg:before {
@@ -10151,7 +10126,6 @@ input[type=number] {
 }
 .about-heading__ct-note span {
   background-image: -webkit-gradient(linear, left top, right top, color-stop(50%, #B01D3A), color-stop(50%, transparent));
-  background-image: -o-linear-gradient(left, #B01D3A 50%, transparent 50%);
   background-image: linear-gradient(to right, #B01D3A 50%, transparent 50%);
   background-size: 200% 55px;
   background-repeat: no-repeat;
@@ -10475,7 +10449,6 @@ input[type=number] {
 }
 .about-note__ct-ttl span {
   background-image: -webkit-gradient(linear, left top, right top, color-stop(50%, #B01D3A), color-stop(50%, transparent));
-  background-image: -o-linear-gradient(left, #B01D3A 50%, transparent 50%);
   background-image: linear-gradient(to right, #B01D3A 50%, transparent 50%);
   background-size: 200% 40px;
   background-repeat: no-repeat;
@@ -10774,7 +10747,7 @@ input[type=number] {
           justify-content: space-between;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
-  background: #faf5f2;
+  background: rgb(250, 245, 242);
   padding: 15px 20px;
   margin-bottom: 10px;
 }
