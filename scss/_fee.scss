@@ -171,32 +171,11 @@
 	}
 }
 
-::-webkit-scrollbar { display: none; }
+@include mq{
+	::-webkit-scrollbar { display: none; }
+}
 
-.mCSB_horizontal.mCSB_inside>.mCSB_container{
-	margin-bottom: 17px;
-}
-.mCS-dark.mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar{
-	background: $red;
-	border-radius: 0;
-	height: 5px;
-	z-index: 10;
-}
-.mCS-dark.mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar{
-	background: $red;
-}
-.mCS-dark.mCSB_scrollTools .mCSB_dragger.mCSB_dragger_onDrag .mCSB_dragger_bar, .mCS-dark.mCSB_scrollTools .mCSB_dragger:active .mCSB_dragger_bar{
-	background: $red;
-}
-.mCSB_scrollTools.mCSB_scrollTools_horizontal .mCSB_draggerRail{
-	background: #D9D9D9;
-	top: -1px;
-	position: absolute;
-	width: 835px;
-	height: 5px;
-	left: 50%;
-    transform: translateX(-50%);
-}
+
 .fee-faq{
 	padding-bottom: 183px;
 	@include mq{

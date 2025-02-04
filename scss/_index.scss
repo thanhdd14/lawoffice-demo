@@ -905,6 +905,9 @@
 		background: white;
 		height: 100%;
 		padding: 0 0 23px;
+		@include mq(md-min){
+			min-height: 297px;
+		}
 		&:after{
 			content: "";
 			width: 20px;
