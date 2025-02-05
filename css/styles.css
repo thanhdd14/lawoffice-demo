@@ -5837,6 +5837,11 @@ input[type=number] {
 .c-table--04 tr td {
   width: 100%;
 }
+@media screen and (max-width: 834px) {
+  .c-table--fullsp table {
+    width: 100%;
+  }
+}
 
 @media screen and (max-width: 834px) {
   ::-webkit-scrollbar {

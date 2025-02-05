@@ -169,6 +169,13 @@
 			}
 		}
 	}
+	&--fullsp{
+		@include mq{
+			table{
+				width: 100%;
+			}
+		}
+	}
 }
 
 @include mq{
