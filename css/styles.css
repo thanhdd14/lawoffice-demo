@@ -7690,8 +7690,18 @@ input[type=number] {
   overflow-x: auto;
   font-size: 1.4rem;
 }
+@media screen and (max-width: 834px) {
+  .business-contract__table {
+    margin-right: -15px;
+  }
+}
 .business-contract__table table {
   width: 1100px;
+}
+@media screen and (max-width: 834px) {
+  .business-contract__table table {
+    width: 740px;
+  }
 }
 .business-contract__table table tr th, .business-contract__table table tr td {
   width: 25.4566666667%;
@@ -7777,6 +7787,11 @@ input[type=number] {
   line-height: 1;
   margin-bottom: 10px;
 }
+@media screen and (max-width: 834px) {
+  .business-contract__table-ttl .c-ft--jp {
+    font-size: 3rem;
+  }
+}
 .business-contract__table-ttl .c-ft--base {
   font-size: 1.2rem;
   font-weight: 500;
@@ -7801,6 +7816,11 @@ input[type=number] {
 }
 .business-contract__table-price span {
   font-size: 2.6rem;
+}
+@media screen and (max-width: 834px) {
+  .business-contract__table-price span {
+    font-size: 2rem;
+  }
 }
 .business-contract__note {
   background: #FAF5F2;

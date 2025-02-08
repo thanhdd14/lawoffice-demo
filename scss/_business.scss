@@ -593,8 +593,14 @@
 		margin-bottom: 115px;
 		overflow-x: auto;
 		@include font-size(14);
+		@include mq{
+			margin-right: -15px;
+		}
 		table{
 			width: 1100px;
+			@include mq{
+				width: 740px;
+			}
 			tr{
 				th, td{
 					width: calc((100% - 23.63%)/3);
@@ -667,6 +673,9 @@
 					@include font-size(34);
 					line-height: 1;
 					margin-bottom: 10px;
+					@include mq{
+						@include font-size(30);
+					}
 				}
 				&--base{
 					@include font-size(12);
@@ -685,6 +694,9 @@
 			text-align: left;
 			span{
 				@include font-size(26);
+				@include mq{
+					@include font-size(20);
+				}
 			}
 		}
 	}
