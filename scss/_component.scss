@@ -265,11 +265,6 @@ Component
 		padding-bottom: 60px;
 		position: relative;
 		margin-bottom: 34px;
-		// @include mq{
-		// 	@include font-size(22);
-		// 	padding-bottom: 40px;
-		// 	margin-bottom: 30px;
-		// }
 		@include mq{
 			line-height: 1.5;
 		}
@@ -277,17 +272,11 @@ Component
 			background: #000;
 			bottom: 0;
 			left: 50%;
-			// @include mq{
-			// 	height: 30px;
-			// }
 		}
 		@include p-after(1px, 20px){
 			bottom: 0;
 			background: $red;
 			left: 50%;
-			// @include mq{
-			// 	height: 15px;
-			// }
 		}
 		&--bl{
 			color: #000;

@@ -1,0 +1,523 @@
+@use 'vars' as *;
+
+.business-process{
+	padding-bottom: 50px;
+	background: #fff;
+	border-top: 3px solid #B01D3A;
+	&__heading{
+		max-width: 512px;
+		padding: 51px 39px 23px;
+		color: #fff;
+		background: #B01D3A;
+		margin-bottom: 100px;
+		border-radius: 0 0 4px 4px;
+		@include mq{
+			padding: 23px 40px;
+			margin-bottom: 60px;
+		}
+		&-ttl{
+			@include font-size(26);
+			margin-bottom: 10px;
+			font-family: $font-jp;
+		}
+	}
+	&__list{
+		&-item{
+			@include flex(0,0,wrap);
+			min-height: 137px;
+			margin-bottom: 13px;
+			&:last-of-type{
+				margin-bottom: 0;
+				.business-process__list-step{
+					&:after{
+						display: none;
+					}
+				}
+			}
+		}
+		&-step{
+			width: 78px;
+			font-family: $font-Roboto;
+			@include font-size(16);
+			font-weight: 700;
+			text-align: center;
+			position: relative;
+			padding-top: 5px;
+			@include p-after(1px, 80%){
+				background: #D0D0D0;
+				bottom: 0;
+				left: 50%;
+			}
+		}
+		&-ct{
+			width: calc(100% - 78px);
+			padding-left: 32px;
+			@include mq{
+				padding-left: 20px;
+			}
+		}
+		&-ttl{
+			font-family: $font-jp;
+			@include font-size(20);
+			font-weight: 700;
+			margin-bottom: 10px;
+			color: #B01D3A;
+		}
+	}
+}
+
+.business-corporate{
+	padding: 80px 0 165px;
+	@include mq{
+		padding: 50px 0;
+	}
+	&__ttl{
+		@include fts(26,42);
+		font-family: $font-jp;
+		text-align: center;
+		font-weight: 700;
+		color: #B01D3A;
+		margin-bottom: 32px;
+		@include mq{
+			@include font-size(20);
+			margin-bottom: 20px;
+		}
+	}
+	&__intro{
+		margin-bottom: 42px;
+		letter-spacing: .02em;
+		@include mq{
+			margin-bottom: 20px;
+		}
+	}
+	&__box{
+		max-width: 876px;
+		margin: 0 auto;
+		padding: 30px;
+		border: 1px solid #D0D0D0;
+		@include mq{
+			padding: 20px 15px;
+		}
+		&-dl{
+			margin-bottom: 27px;
+			@include mq{
+				margin-bottom: 15px;
+			}
+			&:last-child{
+				margin-bottom: 0;
+			}
+		}
+		&-dt{
+			color: #B01D3A;
+			@include font-size(16);
+			font-weight: 500;
+			letter-spacing: .07em;
+			span{
+				font-family: $font-Roboto;
+				margin-right: 14px;
+				@include mq{
+					margin-right: 10px;
+				}
+			}
+		}
+		&-dd{
+			@include fts(14, 24);
+			letter-spacing: .02em;
+		}
+	}
+}
+
+.business-costs{
+	.c-ttl__05{
+		@include mq(md-min){
+			margin-bottom: 43px;
+		}
+	}
+	&__intro{
+		text-align: center;
+		margin-bottom: 60px;
+		@include mq{
+			margin-bottom: 30px;
+		}
+	}
+	&__table{
+		max-width: 914px;
+		margin: 0 auto;
+		table{
+			width: 100%;
+			border: 1px solid #D0D0D0;
+			tr{
+				td{
+					width: 50%;
+					border-right: 1px solid #D0D0D0;
+					border-bottom: 1px solid #D0D0D0;
+					padding: 13px 20px;
+					@include mq{
+						padding: 10px 14px;
+					}
+					&:last-of-type{
+						border-right: none;
+					}
+					span{
+						@include font-size(22);
+						color: #B01D3A;
+						@include mq{
+							@include font-size(18);
+						}
+					}
+				}
+				&:nth-child(1){
+					td{
+						text-align: center;
+						&:nth-child(1){
+							background: #FAF5F2;
+						}
+					}
+				}
+				&:nth-child(2){
+					td{
+						padding: 30px 50px;
+						@include mq{
+							padding: 15px;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+
+.business-offer{
+	padding: 120px 0 100px;
+	@include mq{
+		padding: 50px 0;
+	}
+	.c-ttl__05{
+		@include mq(md-min){
+			margin-bottom: 60px;
+		}
+	}
+	&__ttlsub{
+		@include font-size(24);
+		font-family: $font-jp;
+		color: #fff;
+		background: #B01D3A;
+		padding: 13px 30px;
+		margin-bottom: 38px;
+		@include mq{
+			@include font-size(20);
+			padding: 8px 15px;
+			margin-bottom: 25px;
+		}
+	}
+	&__list{
+		margin-bottom: 90px;
+		@include mq{
+			margin-bottom: 50px;
+		}
+		&:last-of-type{
+			margin-bottom: 58px;
+		}
+		&-item{
+			margin-bottom: 35px;
+			@include mq{
+				margin-bottom: 25px;
+			}
+			&:last-of-type{
+				margin-bottom: 0;
+			}
+		}
+		&-ttl{
+			font-family: $font-jp;
+			@include font-size(20);
+			line-height: 1.6;
+			border-bottom: 1px solid $red;
+			padding-bottom: 8px;
+			margin-bottom: 9px;
+			@include mq{
+				@include font-size(18);
+			}
+		}
+		&-content{
+			p{
+				margin-bottom: 13px;
+				letter-spacing: 0.02em;
+				@include mq{
+					margin-bottom: 8px;
+				}
+			}
+			table{
+				width: 100%;
+				border: 1px solid #D0D0D0;
+				text-align: center;
+				tr{
+					td{
+						width: 50%;
+						border-right: 1px solid #D0D0D0;
+						border-bottom: 1px solid #D0D0D0;
+						padding: 26px 10px;
+						@include mq{
+							padding: 15px 10px;
+						}
+						&:last-of-type{
+							border-right: none;
+						}
+					}
+					&:first-child{
+						td{
+							padding: 13px 10px;
+							font-weight: 500;
+							&:first-child{
+								background: #FAF5F2;
+							}
+						}
+					}
+					&:last-child{
+						td{
+							border-bottom: none;
+						}
+					}
+				}
+			}
+		}
+	}
+
+	&__note{
+		background: #FAF5F2;
+		padding: 30px;
+		letter-spacing: 0.02em;
+		line-height: 1.65;
+		@include mq{
+			padding: 15px;
+		}
+		span{
+			color: #B01D3A;
+			font-weight: 700;
+		}
+	}
+}
+
+
+.business-support{
+	padding: 120px 0;
+	@include mq{
+		padding: 50px 0;
+	}
+	.c-ttl__05{
+		margin-bottom: 64px;
+		@include mq{
+			margin-bottom: 30px;
+		}
+	}
+	&__img{
+		max-width: 314px;
+		margin: 0 auto 32px;
+	}
+	&__steps{
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		gap: 0 76px;
+		margin-bottom: 64px;
+		@include mq{
+			grid-template-columns: 1fr;
+			gap: 30px 0;
+		}
+		&-item{
+			@include fts(14,24);
+			@include mq{
+				padding: 0 20px;
+			}
+		}
+		&-ttl{
+			text-align: center;
+			margin-bottom: 23px;
+			.txt-en{
+				font-family: $font-Roboto;
+				@include font-size(14);
+				position: relative;
+				padding-bottom: 15px;
+				display: block;
+				margin-bottom: 5px;
+				@include p-before(1px, 12px){
+					background: #000000;
+					bottom: 0;
+					left: 50%;
+				}
+				@include p-after(1px, 6px){
+					background: $red;
+					bottom: 0;
+					left: 50%;
+				}
+			}
+			.txt-jp{
+				font-family: $font-jp;
+				@include font-size(20);
+				line-height: 1;
+				font-weight: 700;
+				color: $red;
+				display: block;
+				width: 100%;
+			}
+		}
+	}
+	&__list{
+		&-item{
+			margin-bottom: 60px;
+			@include mq{
+				margin-bottom: 30px;
+			}
+			&:last-of-type{
+				margin-bottom: 0;
+			}
+		}
+		&-ttl{
+			border-bottom: 1px solid $red;
+			margin-bottom: 16px;
+			padding-bottom: 10px;
+			&>*{
+				display: block;
+			}
+			.txt-en{
+				font-family: $font-Roboto;
+				@include font-size(12);
+				font-weight: 500;
+				letter-spacing: 0.1em;
+				margin-bottom: 6px;
+			}
+			.txt-jp{
+				font-family: $font-jp;
+				@include font-size(20);
+				font-weight: 600;
+				color: $red;
+			}
+		}
+		&-ttlsub{
+			letter-spacing: 0.02em;
+			position: relative;
+			margin-bottom: 7px;
+			padding-bottom: 6px;
+			color: $red;
+			font-weight: 700;
+			@include p-after(30px, 1px){
+				background: $red;
+				bottom: 0;
+				left: 0;
+			}
+		}
+		&-content{
+			@include fts(14, 24);
+			letter-spacing: 0.02em;
+			.txt-lead{
+				font-weight: 500;
+				@include fts(16.28);
+				margin-bottom: 10px;
+				letter-spacing: 0;
+			}
+		}
+		&-note{
+			background: #FAF5F2;
+			padding: 30px;
+			letter-spacing: 0.02em;
+			line-height: 1.65;
+			margin-top: 30px;
+			@include mq{
+				padding: 15px;
+			}
+			span{
+				color: #B01D3A;
+				font-weight: 700;
+			}
+		}
+		&-benefit{
+			margin-top: 30px;
+			@include mq{
+				margin-top: 20px;
+			}
+		}
+	}
+}
+
+.dots-list{
+	margin-bottom: 8px;
+	li{
+		position: relative;
+		padding-left: 18px;
+		@include p-before(0, 0){
+			content: "●";
+			@include font-size(14);
+			color: $red;
+			top: 2px;
+			left: 0;
+		}
+	}
+}
+.guardianship-box{
+	padding: 74px 32px;
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 0 52px;
+	background: #F1F1F1;
+	margin-top: 30px;
+	@include mq{
+		grid-template-columns: 1fr;
+		padding: 30px 15px;
+	}
+	&__item{
+		@include mq{
+			margin-bottom: 30px;
+			&:last-of-type{
+				margin-bottom: 0;
+			}
+		}
+		span{
+			width: 100%;
+			height: 90px;
+			background: #fff;
+			@include flex(center,center);
+			margin-bottom: 50px;
+			@include font-size(20);
+			font-weight: 700;
+			position: relative;
+			@include mq{
+				height: 60px;
+				margin-bottom: 40px;
+
+			}
+			@include p-after(8px, 50px){
+				background: #D0D0D0;
+				bottom: 0;
+				left: 50%;
+				transform: translate(-50%, 100%);
+				@include mq{
+					width: 6px;
+					height: 40px;
+				}
+			}
+		}
+	}
+	&__ct{
+		padding: 30px 30px;
+		background: #fff;
+		@include mq{
+			padding: 15px;
+		}
+		p{
+			letter-spacing: 0.02em;
+		}
+		&-ttl{
+			@include font-size(20);
+			font-weight: 700;
+			letter-spacing: 0.03em;
+			position: relative;
+			color: $red;
+			margin-bottom: 12px;
+			padding-bottom: 11px;
+			@include p-after(30px, 2px){
+				background: $red;
+				left: 0;
+				bottom: 0;
+			}
+		}
+	}
+}
